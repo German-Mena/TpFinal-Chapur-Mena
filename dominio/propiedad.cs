@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace dominio
 {
-    class propiedad
+    public class propiedad
     {
         public int ID { get; set; }
         public tipoPropiedad tipoPropiedad { get; set; }
         public tipoContrato tipoContrato { get; set; }
-        public direccion direccion { get; set; }
+        public ubicacion ubicacion { get; set; }
         public DateTime fechaPublicacion { get; set; }
         public DateTime fechaConstruccion { get; set; }
         public int cantidadAmbientes { get; set; }

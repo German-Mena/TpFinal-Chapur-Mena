@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace dominio
 {
-    class multimedia
+    public class multimedia
     {
         public int ID { get; set; }
         //public propiedad propiedad { get; set; }

@@ -9,5 +9,9 @@ namespace negocio
     class Diccionario
     {
         public static string CONEXION_SERVER = "server =.\\SQLEXPRESS; database=inmobiliaria_DB; integrated security = true";
+
+        public static string LISTAR_PROPIEDADES = "";
+        //Pendiente a desarrollar
+
     }
 }

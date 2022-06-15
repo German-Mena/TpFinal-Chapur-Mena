@@ -44,6 +44,13 @@
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="Diccionario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="propiedadNegocio.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dominio\dominio.csproj">
+      <Project>{7aeca7aa-8117-4518-b359-03dea9858d4a}</Project>
+      <Name>dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
