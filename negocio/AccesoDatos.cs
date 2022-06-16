@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace negocio
 {
-    class AccesoDatos
+    public class AccesoDatos
     {
 
         private SqlConnection conexion;
@@ -19,6 +19,7 @@ namespace negocio
         {
             get { return lector; }
         }
+
 
         public AccesoDatos()
         {
@@ -39,7 +40,7 @@ namespace negocio
             try
             {
                 conexion.Open();
-                lector = comando.ExecuteReader();
+                comando.ExecuteReader();
             }
             catch (Exception ex)
             {

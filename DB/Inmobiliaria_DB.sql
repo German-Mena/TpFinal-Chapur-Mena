@@ -17,12 +17,14 @@ create table tipoContrato(
 GO
 create table tipoPropiedad(
 	id int identity(1,1) not null,
+	idPropiedad int null,
 	descripcion varchar(50) null,
     primary key (id)
 )
 GO
 create table ubicacion(
 	id int identity(1,1) not null,
+	idPropiedad int null,
 	calle varchar(100) not null,
 	altura int not null,
 	departamento varchar(10) not null,
