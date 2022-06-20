@@ -25,7 +25,7 @@ namespace TP_inmobiliaria
             {
                 listaPropiedades = propiedad.listar();
                 dgvTable.DataSource = listaPropiedades;
-                cargarImagen(listaPropiedades[0].);
+                //cargarImagen(listaPropiedades[0].link);
             }
             catch (Exception ex)
             {

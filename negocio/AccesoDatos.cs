@@ -20,7 +20,6 @@ namespace negocio
             get { return lector; }
         }
 
-
         public AccesoDatos()
         {
             conexion = new SqlConnection(Diccionario.CONEXION_SERVER);
@@ -40,7 +39,7 @@ namespace negocio
             try
             {
                 conexion.Open();
-                comando.ExecuteReader();
+                lector = comando.ExecuteReader();
             }
             catch (Exception ex)
             {
