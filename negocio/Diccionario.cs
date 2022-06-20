@@ -10,9 +10,8 @@ namespace negocio
     {
         public static string CONEXION_SERVER = "server =.\\SQLEXPRESS; database=inmobiliaria_DB; integrated security = true";
 
-        public static string LISTAR_PROPIEDADES = "Select ID, P.descripcion, C.descripcion, u.calle, fechaPublicacion, fechaConstruccion," +
-                                                  "cantidadAmbientes, cantidadBaños, cantidadCocheras, descripcion, valor, M.link from propiedad , multimedia M Where propiedad.ID = M.idPropiedad" +
-                                                  " and propiedad.ID = P.idPropiedad and  propiedad.ID = C.idPropiedad and propiedad.ID = U.idPropiedad";
-        //Pendiente a desarrollar
+        public static string LISTAR_PROPIEDADES = "Select P.id, P.descripcion, TC.descripcion TipoContrato, U.calle, P.fechaPublicacion, P.fechaConstruccion,P.cantidadAmbientes , P.cantidadBaños," +
+                                                   "P.cantidadCocheras, TP.descripcion TipoPropiedad, P.valor, M.link from propiedad P, multimedia M, tipoPropiedad TP, ubicacion U, tipoContrato TC" +
+                                                   "where P.idMultimedia = M.id and P.idTipoPropiedad = TP.id and  P.idUbicacion = U.id and P.idTipoContrato = TC.id";
     }
 }

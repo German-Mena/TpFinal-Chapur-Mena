@@ -23,29 +23,33 @@ namespace negocio
                 while (datos.Lector.Read())
                 {
                     propiedad aux = new propiedad();
-                    aux.ID = (int)datos["ID"];
+                    aux.id = (int)datos["id"];
+                    //tipoPropiedad
                     aux.tipoPropiedad = new tipoPropiedad();
                     aux.tipoPropiedad.id = (int)datos["idPropiedad"];
                     aux.tipoPropiedad.descripcion = (string)datos["descripcion"];
+                    //tipoContrato
                     aux.tipoContrato = new tipoContrato();
                     aux.tipoContrato.id = (int)datos["idContrato"];
                     aux.tipoContrato.descripcion = (string)datos["descripcion"];
+                    //ubicación
                     aux.ubicacion = new ubicacion();
                     // con el tema de la ubicacion podemos agregar todo si se quiere
-                    aux.ubicacion.ID = datos["idUbicacion"];
+                    aux.ubicacion.id = datos["idUbicacion"];
                     aux.ubicacion.calle = datos["calle"];
-                    new DateTime();//como lo metemos?
-                    aux.fechaPublicacion = datos["fechaPublicacion"]; //modificar
+                    // fechas, es correcto?
+                    aux.fechaPublicacion = datos["fechaPublicacion"];
                     aux.fechaConstruccion = datos["fechaConstruccion"];
                     aux.cantidadAmbientes =(int)datos["cantidadAmbientes"];
                     aux.cantidadCocheras = (int)datos["cantidadCocheras"];
                     aux.descripcion = (string)datos["descripcion"];
                     aux.valor = (decimal)datos["valor"];
+                    //multimedia
                     aux.multimedia = new multimedia();
+                    aux.multimedia.id = (int)datos["idMultimedia"];
                     if (!(datos["link"] is DBNull))
-                        aux.link = (string)datos["link"];
+                        aux.multimedia.link = (string)datos["link"];
                     lista.Add(aux);                    
-                    //Pendiente a desarrollar
                 }
 
                 return lista;

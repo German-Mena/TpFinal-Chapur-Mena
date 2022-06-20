@@ -1,9 +1,15 @@
+use master
+go
+drop database inmobiliaria_DB
+go
 create database inmobiliaria_DB
+go
+Use inmobiliaria_DB
 GO
+
 create table multimedia(
 	id int identity(1,1) not null,
 	descripcion varchar(100) null,
-	idPropiedad int null,
 	link varchar(1000) not null,
     primary key (id)
 )
@@ -24,7 +30,6 @@ create table tipoPropiedad(
 GO
 create table ubicacion(
 	id int identity(1,1) not null,
-	idPropiedad int null,
 	calle varchar(100) not null,
 	altura int not null,
 	departamento varchar(10) not null,
@@ -55,15 +60,15 @@ create table propiedad(
     foreign key (idUbicacion) references ubicacion(id) 
 )
 
-insert into tipoContrato values ('Alquiler'), ('Venta')
+insert into tipoContrato values ('Alquiler'), ('Venta'),('Alquiler Temporario'),('Tiempo Compartido')
 select * from tipoContrato
 
-insert into tipoPropiedad values ('Departamento'), ('Casa')
+insert into tipoPropiedad values ('Departamento'),('Casa'),('Galpón'),('Nave Industrial'),('Terreno'),('Local')
 select * from tipoPropiedad
 
 insert into ubicacion values ('calle 1', '1234', '3D', 'Merlo', 'Buenos Aires', 'Argentina')
 
 insert into multimedia values ('Living', 'http://www.perezpando.com.ar/wp-content/uploads/Ver-casas-modernas-por-dentro-600x323.jpg')
 
-insert into propiedad values ('2', '1', '1', '1', '2022-06-14' , '1997/03/02', '5', '2', '2', 'Casa muy moderna y grande', '550000')
+insert into propiedad values ('2', '1', '1', '1', '2022-06-14' , '1997-03-02', '5', '2', '2', 'Casa muy moderna y grande', '550000')
 
