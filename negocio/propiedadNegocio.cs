@@ -17,7 +17,7 @@ namespace negocio
             {
                 datos.setearConsulta(Diccionario.LISTAR_PROPIEDADES);
                 datos.ejecutarLectura();
-                datos.ejecutarAccion();
+                //datos.ejecutarAccion();
 
                 while (datos.Lector.Read())
                 {
@@ -25,16 +25,16 @@ namespace negocio
                     aux.ID = (int)datos.Lector["id"];
                     //tipoPropiedad
                     aux.tipoPropiedad = new tipoPropiedad();
-                    aux.tipoPropiedad.id = (int)datos.Lector["idPropiedad"];
+                    aux.tipoPropiedad.id = (int)datos.Lector["id"];
                     aux.tipoPropiedad.descripcion = (string)datos.Lector["descripcion"];
                     //tipoContrato
                     aux.tipoContrato = new tipoContrato();
-                    aux.tipoContrato.id = (int)datos.Lector["idContrato"];
+                    aux.tipoContrato.id = (int)datos.Lector["id"];
                     aux.tipoContrato.descripcion = (string)datos.Lector["descripcion"];
                     //ubicación
                     aux.ubicacion = new ubicacion();
                     // con el tema de la ubicacion podemos agregar todo si se quiere
-                    aux.ubicacion.ID = (int)datos.Lector["idUbicacion"];
+                    aux.ubicacion.ID = (int)datos.Lector["id"];
                     aux.ubicacion.calle = (string)datos.Lector["calle"];
                     // fechas, es correcto?
                     aux.fechaPublicacion = (DateTime)datos.Lector["fechaPublicacion"];
@@ -45,12 +45,12 @@ namespace negocio
                     aux.valor = (decimal)datos.Lector["valor"];
                     //multimedia
                     aux.multimedia = new multimedia();
-                    aux.multimedia.ID = (int)datos.Lector["idMultimedia"];
+                    aux.multimedia.ID = (int)datos.Lector["id"];
                     if (!(datos.Lector["link"] is DBNull))
                         aux.multimedia.link = (string)datos.Lector["link"];
                     lista.Add(aux);                    
                 }
-
+                datos.cerrarConexion();
                 return lista;
             }
 
@@ -58,10 +58,10 @@ namespace negocio
             {
                 throw ex;
             }
-            finally
-            {
-                datos.cerrarConexion();
-            }
+            //finally
+            //{
+            //    datos.cerrarConexion();
+            //}
         }
     }
 }

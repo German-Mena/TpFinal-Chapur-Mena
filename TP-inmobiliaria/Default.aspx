@@ -13,7 +13,6 @@
         </div>
         <asp:GridView ID="dgvTable" runat="server">
         </asp:GridView>
-        <asp:Image ID="pbxImage" runat="server" Height="141px" Width="186px" />
     </form>
 </body>
 </html>

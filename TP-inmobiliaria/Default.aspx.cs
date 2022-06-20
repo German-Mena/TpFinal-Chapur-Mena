@@ -21,29 +21,12 @@ namespace TP_inmobiliaria
         private void cargar()
         {
             propiedadNegocio propiedad = new propiedadNegocio();
-            try
-            {
-                listaPropiedades = propiedad.listar();
-                dgvTable.DataSource = listaPropiedades;
-                //cargarImagen(listaPropiedades[0].link);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-        private void cargarImagen(string imagen)
-        {
-            try
-            {
-                pbxImage.Load(imagen);
-            }
-            catch (Exception)
-            {
-                pbxImage.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
-            }
-        }
 
+            listaPropiedades = propiedad.listar();
+            dgvTable.DataSource = listaPropiedades;
+            dgvTable.DataBind();
+            //cargarImagen(listaPropiedades[0].link);
+        }
 
     }
 }
