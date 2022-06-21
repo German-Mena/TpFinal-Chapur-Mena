@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using dominio;
-using System.Data.SqlClient;
 
 namespace negocio
 {
@@ -27,21 +26,19 @@ namespace negocio
 
                     //tipoPropiedad
                     aux.tipoPropiedad = new tipoPropiedad();
-                    aux.tipoPropiedad.id = (int)datos.Lector["idPropiedad"];
+                    aux.tipoPropiedad.id = (int)datos.Lector["id"];
                     aux.tipoPropiedad.descripcion = (string)datos.Lector["descripcion"];
-
                     //tipoContrato
                     aux.tipoContrato = new tipoContrato();
-                    aux.tipoContrato.id = (int)datos.Lector["idContrato"];
+                    aux.tipoContrato.id = (int)datos.Lector["id"];
                     aux.tipoContrato.descripcion = (string)datos.Lector["descripcion"];
-
                     //ubicación
                     aux.ubicacion = new ubicacion();
 
                     // con el tema de la ubicacion podemos agregar todo si se quiere
-                    aux.ubicacion.ID = (int)datos.Lector["idUbicacion"];
+                    aux.ubicacion.ID = (int)datos.Lector["id"];
                     aux.ubicacion.calle = (string)datos.Lector["calle"];
-
+                    
                     // fechas, es correcto?
                     aux.fechaPublicacion = (DateTime)datos.Lector["fechaPublicacion"];
                     aux.fechaConstruccion = (DateTime)datos.Lector["fechaConstruccion"];
@@ -51,15 +48,13 @@ namespace negocio
                     aux.valor = (decimal)datos.Lector["valor"];
 
                     //multimedia
-                    aux.multimedi = new multimedia();
-                    aux.multimedia.id = (int)datos["idMultimedia"];
-                    if (!(datos["link"] is DBNull))
-                        aux.multimedia.link = (string)datos["link"];
-                    lista.Add(aux);        
-                    
-
+                    aux.multimedia = new multimedia();
+                    aux.multimedia.ID = (int)datos.Lector["id"];
+                    if (!(datos.Lector["link"] is DBNull))
+                        aux.multimedia.link = (string)datos.Lector["link"];
+                    lista.Add(aux);                    
                 }
-
+                datos.cerrarConexion();
                 return lista;
             }
 
@@ -67,10 +62,10 @@ namespace negocio
             {
                 throw ex;
             }
-            finally
-            {
-                datos.cerrarConexion();
-            }
+            //finally
+            //{
+            //    datos.cerrarConexion();
+            //}
         }
     }
 }

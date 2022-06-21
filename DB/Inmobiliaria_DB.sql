@@ -23,7 +23,6 @@ create table tipoContrato(
 GO
 create table tipoPropiedad(
 	id int identity(1,1) not null,
-	idPropiedad int null,
 	descripcion varchar(50) null,
     primary key (id)
 )
@@ -53,7 +52,8 @@ create table propiedad(
 	cantidadCocheras int not null,
 	descripcion varchar(500) not null,
 	valor money not null,
-    primary key (id, idUbicacion),
+    primary key (id),
+	foreign key (idUbicacion) references ubicacion(id),
     foreign key (idTipoPropiedad) references tipoPropiedad(id),
     foreign key (idTipoContrato) references tipoContrato(id),
     foreign key (idMultimedia) references multimedia(id),
@@ -67,8 +67,12 @@ insert into tipoPropiedad values ('Departamento'),('Casa'),('Galpón'),('Nave Ind
 select * from tipoPropiedad
 
 insert into ubicacion values ('calle 1', '1234', '3D', 'Merlo', 'Buenos Aires', 'Argentina')
+insert into ubicacion values ('Agüero', '1789', '2', 'Barrio Norte', 'CABA', 'Argentina')
 
 insert into multimedia values ('Living', 'http://www.perezpando.com.ar/wp-content/uploads/Ver-casas-modernas-por-dentro-600x323.jpg')
+insert into multimedia values('Cocina','https://thumbs4.properati.com/jDEHlERu58XUUOaSb6LaNJLz74c=/360x270/filters:strip_icc()/https%3A%2F%2Fcdn-images.xintelweb.com%2Fupload%2Fmda1732_2.jpg%3F1634843276')
+
 
 insert into propiedad values ('2', '1', '1', '1', '2022-06-14' , '1997-03-02', '5', '2', '2', 'Casa muy moderna y grande', '550000')
+insert into propiedad values ('1', '2', '2', '2', '2022-06-15' , '1997-03-15', '5', '2', '2', 'En pleno centro de Buenos Aires', '600000')
 
