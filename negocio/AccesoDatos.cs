@@ -20,7 +20,6 @@ namespace negocio
             get { return lector; }
         }
 
-
         public AccesoDatos()
         {
             conexion = new SqlConnection(Diccionario.CONEXION_SERVER);
