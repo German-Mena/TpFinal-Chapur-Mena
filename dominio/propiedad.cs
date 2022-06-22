@@ -12,7 +12,7 @@ namespace dominio
         public tipoPropiedad tipoPropiedad { get; set; }
         public tipoContrato tipoContrato { get; set; }
         public ubicacion ubicacion { get; set; }
-        public multimedia multimedia { get; set; } 
+        public string link { get; set; } 
         public DateTime fechaPublicacion { get; set; }
         public DateTime fechaConstruccion { get; set; }
         public int cantidadAmbientes { get; set; }
@@ -21,4 +21,4 @@ namespace dominio
         public string descripcion { get; set; }
         public decimal valor { get; set; }
     }
-}
+}  

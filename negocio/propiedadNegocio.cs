@@ -47,12 +47,12 @@ namespace negocio
                     aux.descripcion = (string)datos.Lector["descripcion"];
                     aux.valor = (decimal)datos.Lector["valor"];
 
-                    //multimedia
-                    aux.multimedia = new multimedia();
-                    aux.multimedia.ID = (int)datos.Lector["id"];
-                    if (!(datos.Lector["link"] is DBNull))
-                        aux.multimedia.link = (string)datos.Lector["link"];
-                    lista.Add(aux);                    
+                    ////multimedia
+                    //aux.multimedia = new multimedia();
+                    //aux.multimedia.ID = (int)datos.Lector["id"];
+                    //if (!(datos.Lector["link"] is DBNull))
+                    //    aux.multimedia.link = (string)datos.Lector["link"];
+                    //lista.Add(aux);                    
                 }
                 datos.cerrarConexion();
                 return lista;
@@ -66,6 +66,43 @@ namespace negocio
             //{
             //    datos.cerrarConexion();
             //}
+        }
+
+        public List<propiedad> listarPropiedades_cards()
+        {
+            List<propiedad> lista = new List<propiedad>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta(Diccionario.LISTAR_PROPIEDADES_CARDS);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    propiedad aux = new propiedad();
+
+                    aux.ID = (int)datos.Lector["id"];
+                    aux.link = (string)datos.Lector["link"];
+                    aux.descripcion = (string)datos.Lector["descripcion"];
+                    aux.valor = (decimal)datos.Lector["valor"];
+                    aux.cantidadAmbientes = (int)datos.Lector["cantidadAmbientes"];
+                    aux.cantidadBaños = (int)datos.Lector["cantidadBaños"];
+                    aux.cantidadCocheras = (int)datos.Lector["cantidadCocheras"];
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
     }
 }

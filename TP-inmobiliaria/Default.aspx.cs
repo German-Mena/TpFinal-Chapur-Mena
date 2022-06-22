@@ -11,7 +11,7 @@ namespace TP_inmobiliaria
 {
     public partial class Default : System.Web.UI.Page
     {
-        private List<propiedad> listaPropiedades;
+        public List<propiedad> listaPropiedades { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,10 +21,11 @@ namespace TP_inmobiliaria
         private void cargar()
         {
             propiedadNegocio propiedad = new propiedadNegocio();
+            listaPropiedades = propiedad.listarPropiedades_cards();
+            Session.Add("Propiedades", listaPropiedades);
 
-            listaPropiedades = propiedad.listar();
-            dgvTable.DataSource = listaPropiedades;
-            dgvTable.DataBind();
+            //dgvTable.DataSource = listaPropiedades;
+            //dgvTable.DataBind();
             //cargarImagen(listaPropiedades[0].link);
         }
 
