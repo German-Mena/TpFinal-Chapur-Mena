@@ -1,17 +1,14 @@
-use master
-go
-drop database inmobiliaria_DB
-go
 create database inmobiliaria_DB
-go
-Use inmobiliaria_DB
 GO
-
+use inmobiliaria_DB
+GO
 create table multimedia(
 	id int identity(1,1) not null,
 	descripcion varchar(100) null,
+	idPropiedad int null,
 	link varchar(1000) not null,
-    primary key (id)
+    primary key (id),
+    foreign key (idPropiedad) references propiedad(id)
 )
 GO
 create table tipoContrato(
@@ -44,35 +41,34 @@ create table propiedad(
 	idTipoPropiedad int not null,
 	idTipoContrato int not null,
 	idUbicacion int not null,
-    idMultimedia int null,
+    link varchar(1000) null,
 	fechaPublicacion date not null,
 	fechaConstruccion date not null,
 	cantidadAmbientes int not null,
-	cantidadBaños int not null,
+	cantidadBaÃ±os int not null,
 	cantidadCocheras int not null,
 	descripcion varchar(500) not null,
 	valor money not null,
-    primary key (id),
-	foreign key (idUbicacion) references ubicacion(id),
+    primary key (id, idUbicacion),
     foreign key (idTipoPropiedad) references tipoPropiedad(id),
     foreign key (idTipoContrato) references tipoContrato(id),
-    foreign key (idMultimedia) references multimedia(id),
     foreign key (idUbicacion) references ubicacion(id) 
 )
 
 insert into tipoContrato values ('Alquiler'), ('Venta'),('Alquiler Temporario'),('Tiempo Compartido')
 select * from tipoContrato
 
-insert into tipoPropiedad values ('Departamento'),('Casa'),('Galpón'),('Nave Industrial'),('Terreno'),('Local')
+insert into tipoPropiedad values ('Departamento'),('Casa'),('GalpÃ³n'),('Nave Industrial'),('Terreno'),('Local')
 select * from tipoPropiedad
 
 insert into ubicacion values ('calle 1', '1234', '3D', 'Merlo', 'Buenos Aires', 'Argentina')
-insert into ubicacion values ('Agüero', '1789', '2', 'Barrio Norte', 'CABA', 'Argentina')
+insert into ubicacion values ('AgÃ¼ero', '1789', '2', 'Barrio Norte', 'CABA', 'Argentina')
 
 insert into multimedia values ('Living', 'http://www.perezpando.com.ar/wp-content/uploads/Ver-casas-modernas-por-dentro-600x323.jpg')
 insert into multimedia values('Cocina','https://thumbs4.properati.com/jDEHlERu58XUUOaSb6LaNJLz74c=/360x270/filters:strip_icc()/https%3A%2F%2Fcdn-images.xintelweb.com%2Fupload%2Fmda1732_2.jpg%3F1634843276')
 
 
-insert into propiedad values ('2', '1', '1', '1', '2022-06-14' , '1997-03-02', '5', '2', '2', 'Casa muy moderna y grande', '550000')
-insert into propiedad values ('1', '2', '2', '2', '2022-06-15' , '1997-03-15', '5', '2', '2', 'En pleno centro de Buenos Aires', '600000')
+insert into propiedad values ('2', '1', '1', 'http://www.perezpando.com.ar/wp-content/uploads/Ver-casas-modernas-por-dentro-600x323.jpg', '2022-06-14' , '1997-03-02', '5', '2', '2', 'Casa muy moderna y grande', '550000')
+insert into propiedad values ('1', '2', '2', 'https://thumbs4.properati.com/jDEHlERu58XUUOaSb6LaNJLz74c=/360x270/filters:strip_icc()/https%3A%2F%2Fcdn-images.xintelweb.com%2Fupload%2Fmda1732_2.jpg%3F1634843276', '2022-06-15' , '1997-03-15', '5', '2', '2', 'En pleno centro de Buenos Aires', '600000')
 
+select P.id, P.link, P.descripcion, P.valor, P.cantidadAmbientes, P.cantidadBaÃ±os, P.cantidadCocheras from propiedad P
