@@ -11,6 +11,7 @@
 
 </head>
 <body>
+    <script src="https://kit.fontawesome.com/1cd9529970.js" crossorigin="anonymous"></script>
     <form id="form1" runat="server">
         <div>
             <div id="navbar">
@@ -24,9 +25,14 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
             <div id="footer">
-                <span>lainmobiliaria@somosinmobiliaria.com</span>
-                <span>Whatsapp +5419 1534768892</span>
-                <span>www.lainmobiliaria.com</span>
+                <center>
+                <span>
+                    <i class="fa-solid fa-envelope"></i>
+                    lainmobiliaria@somosinmobiliaria.com
+                </span>
+                <span class="fa-brands fa-whatsapp"> +5419 1534768892</span>
+                <span class="fa-brands fa-instagram"> lainmobiliaria</span>
+                </center>
             </div>
         </div>
     </form>
