@@ -11,7 +11,7 @@ namespace TP_inmobiliaria
 {
 
 
-    public partial class Default
+    public partial class WebForm1
     {
     }
 }
