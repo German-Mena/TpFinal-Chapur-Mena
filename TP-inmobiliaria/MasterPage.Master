@@ -27,7 +27,7 @@
             </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-            <div id="footer">
+            <footer id="footer">
                 <center>
                 <span>
                     <i class="fa-solid fa-envelope"></i>
@@ -36,10 +36,8 @@
                 <span class="fa-brands fa-whatsapp"> +5419 1534768892</span>
                 <span class="fa-brands fa-instagram"> lainmobiliaria</span>
                 </center>
-            </div>
+            </footer>
         </div>
-    </form>
-  
-            
+    </form>         
 </body>
 </html>
