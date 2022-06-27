@@ -22,8 +22,16 @@ namespace TP_inmobiliaria
         {
             propiedadNegocio propiedad = new propiedadNegocio();
             listaPropiedades = propiedad.listarPropiedades_cards();
-            Session.Add("Propiedades", listaPropiedades);
+            Session.Add("listaPropiedades", listaPropiedades);
         }
+
+        //protected void btn_verPropiedad_Click(object sender, EventArgs e)
+        //{
+        //    int IdPropiedad = 1;
+        //    Response.Redirect("DetallePropiedad.aspx?IdPropiedad=" + IdPropiedad , false);
+        //    //PARA UN FUTURO: tener en cuenta que esta pasando debajo de esta linea
+        //}
+
 
     }
 }

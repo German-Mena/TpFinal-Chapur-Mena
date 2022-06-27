@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Propiedades.aspx.cs" Inherits="TP_inmobiliaria.WebForm1" %>
+﻿<%@ Page Title="La Inmobiliaria" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Propiedades.aspx.cs" Inherits="TP_inmobiliaria.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style> 
         html, body{
@@ -68,29 +68,29 @@
             text-decoration: none;
             color: #3498db;
         }
-</style>
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<body>
-    <%--   <asp:GridView ID="dgvTable" runat="server">
-    </asp:GridView>--%>            
-        <div class="containerProductos">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+        <body>
+            <%--   <asp:GridView ID="dgvTable" runat="server">
+            </asp:GridView>--%>            
+                <div class="containerProductos">
             
-            <% foreach (dominio.propiedad item in listaPropiedades)
-                { %>
-                    <div class="card">
-                        <img src="<%= item.link %>" alt="Propiedad" />
-                        <h4><%= item.descripcion %></h4>
-                        <p><%= item.valor %></p>
-                        <%--<a href="miCarrito?id=<%= item.ID %>">Agregar</a>--%> 
-                    </div>
-            <% } %>
+                    <% foreach (dominio.propiedad item in listaPropiedades)
+                        { %>
+                            <div class="card">
+                                <img src="<%= item.link %>" alt="Propiedad" />
+                                <h4><%= item.descripcion %></h4>
+                                <p><%= item.valor %></p>
+                                <%--<asp:Button ID="btn_verPropiedad" runat="server" Text="Ver Propiedad" OnClick="btn_verPropiedad_Click"/>--%>
+                                <a href="DetallePropiedad.aspx?idPropiedad=<%= item.ID %>">Ver detalle</a> 
+                            </div>
+                    <% } %>
 
-        </div>
-</body>
-</html>
+                </div>
+        </body>
+    </html>
 </asp:Content>
