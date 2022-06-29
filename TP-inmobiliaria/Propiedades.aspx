@@ -2,7 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style> 
         html, body{
-            margin: 40px;
             padding: 0;
         }
 
@@ -29,16 +28,16 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin: auto;
+            margin: 30px;
         }
 
         .containerProductos .card{
-            width: 330px;
-            height: 430px;
+            width: 300px;
+            height: 400px;
             border-radius: 8px;
             box-shadow: 0 2px 2px rgba(0,0,0,0.2);
             overflow: hidden;
-            margin: 20px;
+            margin: 30px;
             text-align: center;
             transition: all 0.25s;
         }
