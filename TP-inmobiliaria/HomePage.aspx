@@ -2,13 +2,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-       <style>
-        .centrado {
-            margin-top: 52px;
-        }
-
-    </style>
+    <div class="bg-image"
+        style="
+        background-image: url('https://images.pexels.com/photos/12139755/pexels-photo-12139755.jpeg');
+        height: auto;
+        ">
     <center>
-         <iframe width="860" class="centrado" height="432" src="https://www.youtube.com/embed/km8YSiE8JJw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+         <iframe width="860" height="432" src="https://www.youtube.com/embed/km8YSiE8JJw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
     </center>
+    </div>
 </asp:Content>
