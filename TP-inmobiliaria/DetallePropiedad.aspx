@@ -1,7 +1,9 @@
 ﻿<%@ Page Title="La Inmobiliaria" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="DetallePropiedad.aspx.cs" Inherits="TP_inmobiliaria.DetallePropiedad" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
+    <style>
+    </style>
+    
 </asp:Content>
 
 <asp:Content ID="Body" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -20,13 +22,13 @@
 
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="<%= propiedad.link %>" class="d-block w-100" width="100" alt="">
+                <img src="<%= propiedad.link %>" class="d-block w-100"  width="100" height= "600" alt="">
             </div>
             
             <% foreach (dominio.multimedia item in listaMultimedia)
                 { %>
                     <div class="carousel-item">
-                        <img src="<%= item.link%>" class="d-block w-100" width="100" alt="...">
+                        <img src="<%= item.link%>" class="d-block w-100" width="100" height="600 "alt="...">
                    </div>
             <% } %>
         </div>
