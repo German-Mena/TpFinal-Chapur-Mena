@@ -44,29 +44,33 @@
 </div> <%-- / .col col-md-8--%>
 <div class="colorder-1 col-md-4">
     <div class="row">
-    <div class="col-lg-8">
-        <h2 class="fw-normal">Heading</h2>
-        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+    <div class="col-lg-8" style="margin:30px">
+        <h2 class="fw-normal"> ACA VA EL PRECIO CON COLOR LINDO</h2>
+        <p><i class="fas fa-map-marker-alt"></i> ACA VA LA DIRECCION</p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-8" style="margin:30px">
+        <p><i class="fas fa-tag"></i>  Tipo de transacción: ACA VA EL TIPO </p>
+        <p><i class="fas fa-bath"></i>  Baños: <%=propiedad.cantidadBaños%></p>
+        <p><i class="fas fa-bed"></i>  Ambientes: <%=propiedad.cantidadAmbientes%></p>
+        <p><i class="fas fa-car-alt"></i>   Cocheras: <%=propiedad.cantidadCocheras%></p>
+        <p><i class="fas fa-calendar-alt"></i>  Antiguedad: <%=propiedad.fechaConstruccion.Year%> año/s</p>
+        
+    </div><!-- /.col-lg-4 -->
+    <div class="w-100"></div>
+    <div class="col-lg-8" style="margin:30px">
+        <h2 class="fw-normal">Descripción</h2>
+        <p><%=propiedad.descripcion%></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="w-100"></div>
 
-    </div><!-- /.col-lg-4 -->
-    <div class="w-100"></div>
-    <div class="col-lg-8">
-        <h2 class="fw-normal">Heading</h2>
-        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-    </div><!-- /.col-lg-4 -->
-    <div class="w-100"></div>
-    <div class="col-lg-8">
-        <h2 class="fw-normal">Heading</h2>
-        <p>And lastly this, the third column of representative placeholder content.</p>
-    </div><!-- /.col-lg-4 -->
 </div> <!-- /.colorder-1 col-md-4-->
 </div><!-- /.row -->
 </div>
 <%--Google maps --%>
 
 <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: auto">
-  <iframe height="400" width="1600" src="https://maps.google.com/maps?q=buenosaires&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-    style="border:0" allowfullscreen="auto"></iframe>
+  <iframe height="400" src="https://maps.google.com/maps?q=buenosaires&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+    style="border:0;width:100%"></iframe>
 </div>
 <%--Google maps ACA FALTA MODIFICAR ESTO DE QUE QUEDE ANCHO AUTOMATICO Y CAMBIARLE Q= POR LA DIRECCION--%>  
 
