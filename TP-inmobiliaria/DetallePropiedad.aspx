@@ -44,24 +44,22 @@
 </div> <%-- / .col col-md-8--%>
 <div class="colorder-1 col-md-4">
     <div class="row">
-    <div class="col-lg-8" style="margin:30px">
-        <h2 class="fw-normal"> ACA VA EL PRECIO CON COLOR LINDO</h2>
-        <p><i class="fas fa-map-marker-alt"></i> ACA VA LA DIRECCION</p>
+    <div class="col-lg-8" style="margin:20px">
+        <h2 class="fw-normal"><%=propiedad.ubicacion.ciudad%>, <%=propiedad.ubicacion.provincia%>, <%=propiedad.ubicacion.pais%> </h2>
+        <p><i class="fas fa-map-marker-alt"></i> <%=propiedad.ubicacion.calle%>,altura: <%=propiedad.ubicacion.altura%></p>
+        <p><i class="fas fa-money-check-alt"></i><%=((float)propiedad.valor)%></p>
     </div><!-- /.col-lg-4 -->
-    <div class="col-lg-8" style="margin:30px">
-        <p><i class="fas fa-tag"></i>  Tipo de transacción: ACA VA EL TIPO </p>
+    <div class="col-lg-8" style="margin:20px">
+        <p><i class="fas fa-tag"></i>  Tipo de transacción: <%=propiedad.tipoContrato.descripcion%> </p>
         <p><i class="fas fa-bath"></i>  Baños: <%=propiedad.cantidadBaños%></p>
         <p><i class="fas fa-bed"></i>  Ambientes: <%=propiedad.cantidadAmbientes%></p>
         <p><i class="fas fa-car-alt"></i>   Cocheras: <%=propiedad.cantidadCocheras%></p>
-        <p><i class="fas fa-calendar-alt"></i>  Antiguedad: <%=propiedad.fechaConstruccion.Year%> año/s</p>
-        
+        <p><i class="fas fa-calendar-alt"></i>  Año de la propiedad: <%=propiedad.fechaConstruccion.Year%></p>
     </div><!-- /.col-lg-4 -->
-    <div class="w-100"></div>
-    <div class="col-lg-8" style="margin:30px">
+    <div class="col-lg-8" style="margin:20px">
         <h2 class="fw-normal">Descripción</h2>
         <p><%=propiedad.descripcion%></p>
     </div><!-- /.col-lg-4 -->
-    <div class="w-100"></div>
 
 </div> <!-- /.colorder-1 col-md-4-->
 </div><!-- /.row -->

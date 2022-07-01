@@ -14,13 +14,15 @@ namespace TP_inmobiliaria
         public propiedad propiedad { get; set; }
         public List<multimedia> listaMultimedia { get; set; }
         //public int idPropiedad { get; set; }
+        public List<propiedad> listaPropiedades { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             int idPropiedad;
             int.TryParse(Request.QueryString["idPropiedad"], out idPropiedad);
 
-            List<propiedad> listaPropiedades = (List<propiedad>)Session["listaPropiedades"];
+            propiedadNegocio propiedades = new propiedadNegocio();
+            listaPropiedades = propiedades.listar();
             propiedad = listaPropiedades.Find(x => x.ID == idPropiedad);
 
             multimediaNegocio multimedia = new multimediaNegocio();
