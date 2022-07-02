@@ -15,7 +15,6 @@ namespace TP_inmobiliaria
         public List<multimedia> listaMultimedia { get; set; }
         //public int idPropiedad { get; set; }
         public List<propiedad> listaPropiedades { get; set; }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             int idPropiedad;
@@ -27,7 +26,7 @@ namespace TP_inmobiliaria
 
             multimediaNegocio multimedia = new multimediaNegocio();
             listaMultimedia = multimedia.listarMultimedia(idPropiedad);
-
         }
+
     }
 }

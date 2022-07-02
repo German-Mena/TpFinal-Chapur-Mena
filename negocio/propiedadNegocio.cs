@@ -27,11 +27,11 @@ namespace negocio
                     //tipoPropiedad
                     aux.tipoPropiedad = new tipoPropiedad();
                     aux.tipoPropiedad.id = (int)datos.Lector["id"];
-                    aux.tipoPropiedad.descripcion = (string)datos.Lector["descripcion"];
+                    aux.tipoPropiedad.descripcion = (string)datos.Lector["TipoPropiedad"];
                     //tipoContrato
                     aux.tipoContrato = new tipoContrato();
                     aux.tipoContrato.id = (int)datos.Lector["id"];
-                    aux.tipoContrato.descripcion = (string)datos.Lector["descripcion"];
+                    aux.tipoContrato.descripcion = (string)datos.Lector["TipoContrato"];
                     //ubicación
                     aux.ubicacion = new ubicacion();
 

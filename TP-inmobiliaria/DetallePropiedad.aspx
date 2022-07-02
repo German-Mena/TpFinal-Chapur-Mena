@@ -67,7 +67,7 @@
 <%--Google maps --%>
 
 <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: auto">
-  <iframe height="400" src="https://maps.google.com/maps?q=buenosaires&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+  <iframe height="400" src="https://maps.google.com/maps?q=merlo&buenosaires&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
     style="border:0;width:100%"></iframe>
 </div>
 <%--Google maps ACA FALTA MODIFICAR ESTO DE QUE QUEDE ANCHO AUTOMATICO Y CAMBIARLE Q= POR LA DIRECCION--%>  
