@@ -40,37 +40,44 @@
         <span class="visually-hidden">Next</span>
     </button>
 
-</div><%-- / .carousel slide--%>
-</div> <%-- / .col col-md-8--%>
-<div class="colorder-1 col-md-4">
-    <div class="row">
-    <div class="col-lg-8" style="margin:20px">
-        <h2 class="fw-normal"><%=propiedad.ubicacion.ciudad%>, <%=propiedad.ubicacion.provincia%>, <%=propiedad.ubicacion.pais%> </h2>
-        <p><i class="fas fa-map-marker-alt"></i> <%=propiedad.ubicacion.calle%>,altura: <%=propiedad.ubicacion.altura%></p>
-        <p><i class="fas fa-money-check-alt"></i><%=((float)propiedad.valor)%></p>
-    </div><!-- /.col-lg-4 -->
-    <div class="col-lg-8" style="margin:20px">
-        <p><i class="fas fa-tag"></i>  Tipo de transacción: <%=propiedad.tipoContrato.descripcion%> </p>
-        <p><i class="fas fa-bath"></i>  Baños: <%=propiedad.cantidadBaños%></p>
-        <p><i class="fas fa-bed"></i>  Ambientes: <%=propiedad.cantidadAmbientes%></p>
-        <p><i class="fas fa-car-alt"></i>   Cocheras: <%=propiedad.cantidadCocheras%></p>
-        <p><i class="fas fa-calendar-alt"></i>  Año de la propiedad: <%=propiedad.fechaConstruccion.Year%></p>
-    </div><!-- /.col-lg-4 -->
-    <div class="col-lg-8" style="margin:20px">
-        <h2 class="fw-normal">Descripción</h2>
-        <p><%=propiedad.descripcion%></p>
-    </div><!-- /.col-lg-4 -->
+    </div>
+    <%-- / .carousel slide--%>
+    </div>
+    <%-- / .col col-md-8--%>
+    <div class="colorder-1 col-md-4">
+        <div class="row">
+            <div class="col-lg-8" style="margin: 20px">
+                <h2 class="fw-normal"><%=propiedad.ubicacion.ciudad%>, <%=propiedad.ubicacion.provincia%>, <%=propiedad.ubicacion.pais%> </h2>
+                <p><i class="fas fa-map-marker-alt"></i><%=propiedad.ubicacion.calle%>,altura: <%=propiedad.ubicacion.altura%></p>
+                <p><i class="fas fa-money-check-alt"></i><%=((float)propiedad.valor)%></p>
+            </div>
+            <!-- /.col-lg-4 -->
+            <div class="col-lg-8" style="margin: 20px">
+                <p><i class="fas fa-tag"></i>Tipo de transacción: <%=propiedad.tipoContrato.descripcion%> </p>
+                <p><i class="fas fa-bath"></i>Baños: <%=propiedad.cantidadBaños%></p>
+                <p><i class="fas fa-bed"></i>Ambientes: <%=propiedad.cantidadAmbientes%></p>
+                <p><i class="fas fa-car-alt"></i>Cocheras: <%=propiedad.cantidadCocheras%></p>
+                <p><i class="fas fa-calendar-alt"></i>Año de la propiedad: <%=propiedad.fechaConstruccion.Year%></p>
+            </div>
+            <!-- /.col-lg-4 -->
+            <div class="col-lg-8" style="margin: 20px">
+                <h2 class="fw-normal">Descripción</h2>
+                <p><%=propiedad.descripcion%></p>
+                <asp:Button ID="btnFavorito" runat="server" Text="Me interesa" OnClick="btnFavorito_Click" />
+            </div>
+            <!-- /.col-lg-4 -->
 
-</div> <!-- /.colorder-1 col-md-4-->
-</div><!-- /.row -->
-</div>
-<%--Google maps --%>
+        </div>
+        <!-- /.colorder-1 col-md-4-->
+    </div>
+    <!-- /.row -->
+    </div>
 
-<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: auto">
-  <iframe height="400" src="https://maps.google.com/maps?q=merlo&buenosaires&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-    style="border:0;width:100%"></iframe>
-</div>
-<%--Google maps ACA FALTA MODIFICAR ESTO DE QUE QUEDE ANCHO AUTOMATICO Y CAMBIARLE Q= POR LA DIRECCION--%>  
+    <%--Google maps --%>
 
-
+    <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: auto">
+        <iframe height="400" src="https://maps.google.com/maps?q=merlo&buenosaires&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+            style="border: 0; width: 100%"></iframe>
+    </div>
+    <%--Google maps ACA FALTA MODIFICAR ESTO DE QUE QUEDE ANCHO AUTOMATICO Y CAMBIARLE Q= POR LA DIRECCION--%>
 </asp:Content>

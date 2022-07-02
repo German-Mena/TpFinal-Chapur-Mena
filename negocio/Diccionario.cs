@@ -17,5 +17,8 @@ namespace negocio
         public static string LISTAR_PROPIEDADES_CARDS = "select P.id, P.link, P.descripcion, P.valor, P.cantidadAmbientes, P.cantidadBaños, P.cantidadCocheras from propiedad P";
 
         public static string LISTAR_MULTIMEDIA = "select id, descripcion, idPropiedad, link from multimedia where idPropiedad = @idPropiedad";
+
+        public static string LISTAR_USUARIOS = "select ID, Usuario, Pass, TipoUser, Mail, Nombre, Apellido, Telefono from Usuario where Usuario = @user AND Pass = @pass";
+    
     }
 }

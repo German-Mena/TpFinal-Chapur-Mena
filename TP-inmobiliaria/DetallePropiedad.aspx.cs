@@ -28,5 +28,13 @@ namespace TP_inmobiliaria
             listaMultimedia = multimedia.listarMultimedia(idPropiedad);
         }
 
+        protected void btnFavorito_Click(object sender, EventArgs e)
+        {
+            if(Session["User"] == null)
+            {
+                Session.Add("error", "Ingresá con tu usuario para mostrar interes en esta propiedad");
+                Response.Redirect("Login.aspx",false);
+            }
+        }
     }
 }
