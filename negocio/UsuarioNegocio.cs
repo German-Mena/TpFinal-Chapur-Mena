@@ -51,13 +51,41 @@ namespace negocio
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally
             {
                 datos.cerrarConexion();
             }
+        }
+
+        public void Agregar(Usuario usuario)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta(Diccionario.AGREGAR_USUARIO);
+                datos.setearParametro("@user", usuario.User);
+                datos.setearParametro("@pass", usuario.Pass);
+                datos.setearParametro("@tipoUsuario", usuario.TipoUsuario);
+                datos.setearParametro("@mail", usuario.Mail);
+                datos.setearParametro("@nombre", usuario.Nombre);
+                datos.setearParametro("@apellido", usuario.Apellido);
+                datos.setearParametro("@telefono", usuario.Telefono);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
         }
     }
 }

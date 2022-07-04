@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <asp:Label Text="text" runat="server" ID="lblMensaje" Font-Size="Larger"/>
+    <asp:Label Text="" runat="server" ID="lblMensaje" Font-Size="Larger"/>
 
     <div>
         <asp:Button ID="BtnNuevoUsuario" runat="server" Text="No tengo usuario en La Inmobiliaria" Onclick="BtnNuevoUsuario_Click"/>

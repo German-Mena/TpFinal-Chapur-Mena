@@ -11,29 +11,58 @@ namespace TP_inmobiliaria
 {
     public partial class DetallePropiedad : System.Web.UI.Page
     {
-        public propiedad propiedad { get; set; }
-        public List<multimedia> listaMultimedia { get; set; }
+        public propiedad Propiedad { get; set; }
+        public List<multimedia> ListaMultimedia { get; set; }
         //public int idPropiedad { get; set; }
-        public List<propiedad> listaPropiedades { get; set; }
+        public List<propiedad> ListaPropiedades { get; set; }
+        public List<Favorito> ListaFavoritos { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             int idPropiedad;
             int.TryParse(Request.QueryString["idPropiedad"], out idPropiedad);
 
             propiedadNegocio propiedades = new propiedadNegocio();
-            listaPropiedades = propiedades.listar();
-            propiedad = listaPropiedades.Find(x => x.ID == idPropiedad);
+            ListaPropiedades = propiedades.listar();
+            Propiedad = ListaPropiedades.Find(x => x.ID == idPropiedad);
 
             multimediaNegocio multimedia = new multimediaNegocio();
-            listaMultimedia = multimedia.listarMultimedia(idPropiedad);
+            ListaMultimedia = multimedia.listarMultimedia(idPropiedad);
         }
 
         protected void btnFavorito_Click(object sender, EventArgs e)
         {
-            if(Session["User"] == null)
+            int idPropiedad;
+            int.TryParse(Request.QueryString["idPropiedad"], out idPropiedad);
+            Session.Add("propiedadFavorita", idPropiedad);
+
+            if (Session["User"] == null)
             {
                 Session.Add("error", "Ingresá con tu usuario para mostrar interes en esta propiedad");
                 Response.Redirect("Login.aspx",false);
+            }
+            else
+            {
+                Usuario user = (Usuario)Session["User"];
+                FavoritoNegocio favorito = new FavoritoNegocio();
+                ListaFavoritos = favorito.listarFavoritos(user.ID);
+
+                if(!ListaFavoritos.Exists(x => x.IdPropiedad == idPropiedad))
+                {
+                    try
+                    {
+                        favorito.agregar(user.ID, idPropiedad);
+                    }
+                    catch (Exception ex)
+                    {
+                        Session.Add("error", "ocurrio un error, intente nuevamente mas tarde...");
+                        Response.Redirect("Error.aspx", false);
+                        throw ex;
+                    }
+                }
+
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+
+
             }
         }
     }

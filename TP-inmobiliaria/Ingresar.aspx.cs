@@ -27,7 +27,9 @@ namespace TP_inmobiliaria
 
                 if(negocio.Loguear(usuario))
                 {
-                    Session.Add("usuario", usuario);
+                    Session.Add("User", usuario);
+                    // Mostrar modal de ingreso correcto
+                    Response.Redirect("HomePage.aspx", false);
                 }
                 else
                 {
