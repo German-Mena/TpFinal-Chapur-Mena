@@ -60,6 +60,7 @@ namespace TP_inmobiliaria
                     }
                 }
 
+                //Esto no esta funcionando
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
 
 

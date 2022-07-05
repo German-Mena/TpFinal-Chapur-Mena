@@ -30,12 +30,13 @@ namespace TP_inmobiliaria
             FavoritoNegocio favorito = new FavoritoNegocio();
             ListaFavoritos = favorito.listarFavoritos(user.ID);
 
+            ListaPropiedades_filtrada = new List<propiedad>();
+
             foreach (Favorito item in ListaFavoritos)
             {
-                //propiedad prop = new propiedad();
-                //prop = ListaPropiedades.Find(x => x.ID == item.IdPropiedad);
-                //ListaPropiedades_filtrada.Add(prop);
-                ListaPropiedades_filtrada.Add(ListaPropiedades.Find(x => x.ID == item.IdPropiedad));
+                propiedad prop = new propiedad();
+                prop = ListaPropiedades.Find(x => x.ID == item.IdPropiedad);
+                ListaPropiedades_filtrada.Add(prop);
             }
         }
     }

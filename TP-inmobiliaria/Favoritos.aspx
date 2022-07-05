@@ -74,6 +74,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="containerProductos">
+
+                    <%if (ListaPropiedades_filtrada.Count == 0)
+                        {%>
+                            <h4>Todavia no tenes propiedades favoritas!</h4>                  
+                        <%} %>
             
                     <% foreach (dominio.propiedad item in ListaPropiedades_filtrada)
                         { %>

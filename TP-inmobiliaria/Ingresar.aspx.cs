@@ -29,7 +29,18 @@ namespace TP_inmobiliaria
                 {
                     Session.Add("User", usuario);
                     // Mostrar modal de ingreso correcto
-                    Response.Redirect("HomePage.aspx", false);
+
+                    if(Session["propiedadFavorita"] == null)
+                    {
+                        Response.Redirect("HomePage.aspx", false);
+                    }
+                    else
+                    {
+                        int idPropiedad = (int)Session["propiedadFavorita"];
+                        string ruta = "DetallePropiedad.aspx?idPropiedad=" + idPropiedad;
+                        Response.Redirect(ruta, false);
+                    }
+
                 }
                 else
                 {
