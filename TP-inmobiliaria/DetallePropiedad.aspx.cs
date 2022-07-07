@@ -44,7 +44,7 @@ namespace TP_inmobiliaria
             {
                 Usuario user = (Usuario)Session["User"];
                 FavoritoNegocio favorito = new FavoritoNegocio();
-                ListaFavoritos = favorito.listarFavoritos(user.ID);
+                ListaFavoritos = favorito.listarFavoritosPorUsuario(user.ID);
 
                 if(!ListaFavoritos.Exists(x => x.IdPropiedad == idPropiedad))
                 {

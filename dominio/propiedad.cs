@@ -20,5 +20,6 @@ namespace dominio
         public int cantidadCocheras { get; set; }
         public string descripcion { get; set; }
         public decimal valor { get; set; }
+        public int idVendedor { get; set; }
     }
 }  

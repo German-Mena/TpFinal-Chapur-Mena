@@ -14,18 +14,23 @@ namespace negocio
                                                   ",P.cantidadAmbientes, P.cantidadBaños,P.cantidadCocheras, TP.descripcion TipoPropiedad, P.link, P.valor from propiedad P, tipoPropiedad TP, ubicacion U, " +
                                                   " tipoContrato TC where P.idTipoPropiedad = TP.id and  P.idUbicacion = U.id and P.idTipoContrato = TC.id";
 
-        public static string LISTAR_PROPIEDADES_CARDS = "select P.id, P.link, P.descripcion, P.valor, P.cantidadAmbientes, P.cantidadBaños, P.cantidadCocheras from propiedad P";
+        public static string LISTAR_PROPIEDADES_CARDS = "select P.id, P.link, P.descripcion, P.valor, P.cantidadAmbientes, P.cantidadBaños, P.cantidadCocheras, P.idVendedor from propiedad P";
 
         public static string LISTAR_MULTIMEDIA = "select id, descripcion, idPropiedad, link from multimedia where idPropiedad = @idPropiedad";
 
         public static string LISTAR_USUARIOS = "select ID, Usuario, Pass, TipoUser, Mail, Nombre, Apellido, Telefono from Usuario where Usuario = @user AND Pass = @pass";
 
+        public static string BUSCAR_DATOS_USUARIO = "select ID, Mail, Nombre, Apellido, Telefono from Usuario where ID = @IdUsuario";
+
         public static string AGREGAR_USUARIO = "insert into usuario values (@user, @pass, @tipoUsuario, @mail, @nombre, @apellido, @telefono)";
 
-        public static string LISTAR_FAVORITOS = "select ID, IdUsuario, IdPropiedad from favorito where IdUsuario = @IdUsuario";
+        public static string LISTAR_FAVORITOS_POR_USUARIO = "select ID, IdUsuario, IdPropiedad from favorito where IdUsuario = @IdUsuario";
 
         public static string AGREGAR_FAVORITO = "insert into favorito values (@idUsuario, @idPropiedad)";
-    
-    
+
+        public static string LISTAR_FAVORITOS = "select ID, IdUsuario, IdPropiedad from favorito";
+
+
+
     }
 }

@@ -91,6 +91,7 @@
     <Content Include="Favoritos.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Ingresar.aspx" />
+    <Content Include="Interesados.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="NuevoUsuario.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -141,6 +142,13 @@
     </Compile>
     <Compile Include="Ingresar.aspx.designer.cs">
       <DependentUpon>Ingresar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Interesados.aspx.cs">
+      <DependentUpon>Interesados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interesados.aspx.designer.cs">
+      <DependentUpon>Interesados.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

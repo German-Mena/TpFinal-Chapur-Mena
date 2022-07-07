@@ -89,3 +89,35 @@ insert into multimedia values ('Living', 'http://www.perezpando.com.ar/wp-conten
 insert into propiedad values ('2', '1', '1', '1', '2022-06-14' , '1997/03/02', '5', '2', '2', 'Casa muy moderna y grande', '550000')
 
 
+------// Update 07/07
+
+create table tipoUser(
+	id int identity(1,1) not null,
+	descripcion varchar(50) null,
+    primary key (id)
+)
+
+ALTER TABLE usuario
+ADD FOREIGN KEY (TipoUser) REFERENCES tipoUser(id)
+
+insert into tipoUser values ('comprador')
+insert into tipoUser values ('vendedor')
+insert into tipoUser values ('admin')
+
+UPDATE usuario
+SET Mail = 'mail1', Nombre ='fulano', Apellido = 'perez', Telefono = 1234 
+WHERE ID = 2
+
+ALTER TABLE propiedad
+ADD idVendedor int null
+
+Alter table propiedad
+add foreign key (idVendedor) references usuario(id)
+
+--Alter table propiedad
+--add check(idVendedor) 
+
+update propiedad
+set idVendedor = 2
+
+

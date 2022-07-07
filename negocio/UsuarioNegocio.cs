@@ -85,7 +85,42 @@ namespace negocio
                 datos.cerrarConexion();
             }
 
+        }
 
+        public Usuario buscarUsuario(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            Usuario usuario = new Usuario();
+            
+            try
+            {
+                datos.setearConsulta(Diccionario.BUSCAR_DATOS_USUARIO);
+                datos.setearParametro("@IdUsuario", id);
+
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    usuario.ID = (int)datos.Lector["ID"];
+                    usuario.Mail = (string)datos.Lector["mail"];
+                    usuario.Nombre = (string)datos.Lector["Nombre"];
+                    usuario.Apellido = (string)datos.Lector["Apellido"];
+                    usuario.Telefono = (long)datos.Lector["Telefono"];
+
+                    return usuario;
+                }
+
+                usuario.ID = -1;
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
     }
 }

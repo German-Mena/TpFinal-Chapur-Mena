@@ -41,5 +41,10 @@ namespace dominio
             Pass = pass;
             //TipoUsuario = (TipoUsuario)tipoUsuario;
         }
+
+        public Usuario()
+        {
+
+        }
     }
 }

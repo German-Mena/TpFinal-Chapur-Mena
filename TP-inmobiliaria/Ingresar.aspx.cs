@@ -28,17 +28,26 @@ namespace TP_inmobiliaria
                 if(negocio.Loguear(usuario))
                 {
                     Session.Add("User", usuario);
-                    // Mostrar modal de ingreso correcto
+                    //Mostrar modal de ingreso correcto
 
-                    if(Session["propiedadFavorita"] == null)
+                    //Aca deberia buscar el id del TipoUsuario vendedor en la tabla tipoUsuario
+
+                    if((int)usuario.TipoUsuario == 2)
                     {
-                        Response.Redirect("HomePage.aspx", false);
+                        Response.Redirect("Interesados.aspx", false);
                     }
                     else
                     {
-                        int idPropiedad = (int)Session["propiedadFavorita"];
-                        string ruta = "DetallePropiedad.aspx?idPropiedad=" + idPropiedad;
-                        Response.Redirect(ruta, false);
+                        if (Session["propiedadFavorita"] == null)
+                        {
+                            Response.Redirect("HomePage.aspx", false);
+                        }
+                        else
+                        {
+                            int idPropiedad = (int)Session["propiedadFavorita"];
+                            string ruta = "DetallePropiedad.aspx?idPropiedad=" + idPropiedad;
+                            Response.Redirect(ruta, false);
+                        }
                     }
 
                 }

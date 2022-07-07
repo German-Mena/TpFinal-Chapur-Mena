@@ -94,6 +94,7 @@ namespace negocio
                     aux.cantidadAmbientes = (int)datos.Lector["cantidadAmbientes"];
                     aux.cantidadBaños = (int)datos.Lector["cantidadBaños"];
                     aux.cantidadCocheras = (int)datos.Lector["cantidadCocheras"];
+                    aux.idVendedor = (int)datos.Lector["idVendedor"];
 
                     lista.Add(aux);
                 }

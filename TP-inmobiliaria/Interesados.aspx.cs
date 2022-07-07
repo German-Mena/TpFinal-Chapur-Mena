@@ -9,16 +9,15 @@ using negocio;
 
 namespace TP_inmobiliaria
 {
-    public partial class Favoritos : System.Web.UI.Page
-    {   
+    public partial class Interesados : System.Web.UI.Page
+    {
         public List<propiedad> ListaPropiedades { get; set; }
         public List<Favorito> ListaFavoritos { get; set; }
-        public List<propiedad> ListaPropiedades_filtrada { get; set; }
-
+        public List<Interesado> ListaInteresados { get; set; }
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             cargar();
-
         }
 
         private void cargar()
@@ -26,17 +25,27 @@ namespace TP_inmobiliaria
             propiedadNegocio propiedad = new propiedadNegocio();
             ListaPropiedades = propiedad.listarPropiedades_cards();
 
-            Usuario user = (Usuario)Session["User"];
+            Usuario vendedor = (Usuario)Session["User"];
             FavoritoNegocio favorito = new FavoritoNegocio();
-            ListaFavoritos = favorito.listarFavoritosPorUsuario(user.ID);
+            ListaFavoritos = favorito.listarFavoritos();
 
-            ListaPropiedades_filtrada = new List<propiedad>();
+            Interesado interesado = new Interesado();
+            ListaInteresados = new List<Interesado>();
+
+            propiedad prop = new propiedad();
+            UsuarioNegocio comprador = new UsuarioNegocio();
 
             foreach (Favorito item in ListaFavoritos)
             {
-                propiedad prop = new propiedad();
                 prop = ListaPropiedades.Find(x => x.ID == item.IdPropiedad);
-                ListaPropiedades_filtrada.Add(prop);
+
+                if(prop.idVendedor == vendedor.ID)
+                {
+                    interesado.Propiedad = prop;
+                    interesado.Usuario = comprador.buscarUsuario(item.IdUsuario);
+
+                    if(interesado.Usuario.ID != -1) ListaInteresados.Add(interesado);
+                }
             }
         }
     }
