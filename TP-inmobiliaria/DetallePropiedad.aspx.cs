@@ -19,6 +19,7 @@ namespace TP_inmobiliaria
         protected void Page_Load(object sender, EventArgs e)
         {
             int idPropiedad;
+            btnFavorito.Text = "Me interesa";
             int.TryParse(Request.QueryString["idPropiedad"], out idPropiedad);
 
             propiedadNegocio propiedades = new propiedadNegocio();
@@ -27,10 +28,24 @@ namespace TP_inmobiliaria
 
             multimediaNegocio multimedia = new multimediaNegocio();
             ListaMultimedia = multimedia.listarMultimedia(idPropiedad);
+
+            if (Session["User"] != null)
+            {
+                Usuario user = (Usuario)Session["User"];
+                FavoritoNegocio favorito = new FavoritoNegocio();
+                ListaFavoritos = favorito.listarFavoritosPorUsuario(user.ID);
+                if (ListaFavoritos.Exists(x => x.IdPropiedad == idPropiedad))
+                {
+                    Label1.Text = "Ya se encuentra en tus favoritos!";
+                    Label1.ForeColor = System.Drawing.Color.Green;
+                    btnFavorito.Text = "No me interesa";
+                }
+            }
         }
 
         protected void btnFavorito_Click(object sender, EventArgs e)
         {
+            
             int idPropiedad;
             int.TryParse(Request.QueryString["idPropiedad"], out idPropiedad);
             Session.Add("propiedadFavorita", idPropiedad);
@@ -45,21 +60,33 @@ namespace TP_inmobiliaria
                 Usuario user = (Usuario)Session["User"];
                 FavoritoNegocio favorito = new FavoritoNegocio();
                 ListaFavoritos = favorito.listarFavoritosPorUsuario(user.ID);
-
-                if(!ListaFavoritos.Exists(x => x.IdPropiedad == idPropiedad))
+                if (btnFavorito.Text == "No me interesa")
                 {
-                    try
-                    {
-                        favorito.agregar(user.ID, idPropiedad);
-                    }
-                    catch (Exception ex)
-                    {
-                        Session.Add("error", "ocurrio un error, intente nuevamente mas tarde...");
-                        Response.Redirect("Error.aspx", false);
-                        throw ex;
-                    }
+                    favorito.quitar(user.ID, idPropiedad);
+                    Label1.Text = "";
+                    btnFavorito.Text = "Me interesa";
                 }
+                else
+                {
+                    if (!ListaFavoritos.Exists(x => x.IdPropiedad == idPropiedad))
+                    {
+                        try
+                        {
+                            favorito.agregar(user.ID, idPropiedad);
+                        }
+                        catch (Exception ex)
+                        {
+                            Session.Add("error", "ocurrio un error, intente nuevamente mas tarde...");
+                            Response.Redirect("Error.aspx", false);
+                            throw ex;
+                        }
+                    }
 
+                    Label1.Text = "Ya se encuentra en tus favoritos!";
+                    Label1.ForeColor = System.Drawing.Color.Green;
+                    btnFavorito.Text = "No me interesa";
+                }
+                
                 //Esto no esta funcionando
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
 

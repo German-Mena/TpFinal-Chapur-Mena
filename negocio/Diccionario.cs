@@ -28,6 +28,8 @@ namespace negocio
 
         public static string AGREGAR_FAVORITO = "insert into favorito values (@idUsuario, @idPropiedad)";
 
+        public static string QUITAR_FAVORITO = "delete from favorito where IdUsuario=@idUsuario AND IdPropiedad=@idPropiedad";
+
         public static string LISTAR_FAVORITOS = "select ID, IdUsuario, IdPropiedad from favorito";
 
 

@@ -18,7 +18,6 @@ namespace TP_inmobiliaria
         protected void Page_Load(object sender, EventArgs e)
         {
             cargar();
-
         }
 
         private void cargar()
@@ -39,5 +38,6 @@ namespace TP_inmobiliaria
                 ListaPropiedades_filtrada.Add(prop);
             }
         }
+        
     }
 }

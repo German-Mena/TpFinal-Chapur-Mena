@@ -100,5 +100,27 @@ namespace negocio
             }
 
         }
+        public void quitar(int idUsuario, int idPropiedad)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta(Diccionario.QUITAR_FAVORITO);
+                datos.setearParametro("@idUsuario", idUsuario);
+                datos.setearParametro("@idPropiedad", idPropiedad);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
     }
 }
