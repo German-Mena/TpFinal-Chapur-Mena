@@ -13,5 +13,11 @@ namespace TP_inmobiliaria
         {
 
         }
+
+        protected void btn_logout_Click(object sender, EventArgs e)
+        {
+            Session.Remove("User");
+            Response.Redirect("HomePage.aspx", false);
+        }
     }
 }

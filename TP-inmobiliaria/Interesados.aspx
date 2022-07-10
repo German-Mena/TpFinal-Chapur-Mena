@@ -21,7 +21,9 @@
                     El cliente prefiere comunicarse entre las 18 y 20 HS
                 </div>
             </div>
-
+            
+            <%--<p><%=item.Propiedad.ID%> <%=item.Usuario.ID %></p>--%>
+            
       <% } %> 
 
 </asp:Content>

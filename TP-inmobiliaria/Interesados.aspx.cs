@@ -30,7 +30,6 @@ namespace TP_inmobiliaria
             FavoritoNegocio favorito = new FavoritoNegocio();
             ListaFavoritos = favorito.listarFavoritos();
 
-            Interesado interesado = new Interesado();
             ListaInteresados = new List<Interesado>();
 
             propiedad prop = new propiedad();
@@ -42,12 +41,16 @@ namespace TP_inmobiliaria
 
                 if(prop.idVendedor == vendedor.ID)
                 {
+                    //Tengo que declarar el obj antes de cargarlo, si no siempre agrega el primero.
+                    Interesado interesado = new Interesado();
+
                     interesado.Propiedad = prop;
                     interesado.Usuario = comprador.buscarUsuario(item.IdUsuario);
 
                     if(interesado.Usuario.ID != -1) ListaInteresados.Add(interesado);
                 }
             }
+
         }
     }
 }
