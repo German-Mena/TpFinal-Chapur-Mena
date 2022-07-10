@@ -14,8 +14,7 @@
                     <h5 class="card-title"><%= item.Usuario.Nombre%> <%= item.Usuario.Apellido%>, <%= item.Usuario.Mail%>, <%=item.Usuario.Telefono%> </h5>
                     <p class="card-text"><%= item.Propiedad.descripcion %></p>
                     <p class="card-text"><%= item.Propiedad.ubicacion.calle%> <%= item.Propiedad.ubicacion.altura %></p>
-                    <a href="#" class="btn btn-primary">Eliminar de interesados</a>
-                    <asp:Button ID="Button1" runat="server" Text="Button" />
+                    <asp:Button ID="btn_Eliminar" runat="server" CssClass="btn btn-primary" Text="Eliminar de interesados" />
                 </div>
                 <div class="card-footer text-muted">
                     El cliente prefiere comunicarse entre las 18 y 20 HS
