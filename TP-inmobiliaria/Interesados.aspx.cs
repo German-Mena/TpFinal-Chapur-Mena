@@ -14,16 +14,17 @@ namespace TP_inmobiliaria
         public List<propiedad> ListaPropiedades { get; set; }
         public List<Favorito> ListaFavoritos { get; set; }
         public List<Interesado> ListaInteresados { get; set; }
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             cargar();
+            
         }
 
         private void cargar()
         {
             propiedadNegocio propiedad = new propiedadNegocio();
-            ListaPropiedades = propiedad.listarPropiedades_cards();
+            ListaPropiedades = propiedad.listar();
 
             Usuario vendedor = (Usuario)Session["User"];
             FavoritoNegocio favorito = new FavoritoNegocio();

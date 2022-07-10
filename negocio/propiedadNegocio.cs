@@ -52,6 +52,7 @@ namespace negocio
                     aux.descripcion = (string)datos.Lector["descripcion"];
                     aux.valor = (decimal)datos.Lector["valor"];
                     aux.link = (string)datos.Lector["link"];
+                    aux.idVendedor = (int)datos.Lector["idVendedor"];
 
                     ////multimedia
                     //aux.multimedia = new multimedia();

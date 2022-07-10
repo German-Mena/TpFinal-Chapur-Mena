@@ -8,6 +8,16 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
+    <%--Se supone que esto tiene que hacer que el footer este fijo al final de la pagina, pero no esta funcionando--%>
+    <style>
+        html, body { height: 100%;}
+
+        body > footer {
+            position: sticky;
+            top: 100vh;
+        }
+    </style>
+
    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
@@ -45,12 +55,24 @@
                         <a class="nav-link" href="Login.aspx">Ingresá</a>
                     </li>
                     <%} %>
-                    <% if (Session["User"] != null)
-                        {%>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Favoritos.aspx">Mis Propiedades</a>
-                    </li>
-                    <%} %>
+                        
+                    <%if (Session["User"] != null)
+                        {
+                            dominio.Usuario user = (dominio.Usuario)Session["User"];
+                            if((int)user.TipoUsuario == 1)
+                            {%>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Favoritos.aspx">Mis Propiedades</a>
+                                </li>
+                            <%}
+                            
+                            if((int)user.TipoUsuario == 2)
+                            {%>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Interesados.aspx">Interesados</a>
+                                </li>
+                          <%}
+                      }%>
                 </ul>
               </div>
             </div>

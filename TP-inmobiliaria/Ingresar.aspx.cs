@@ -31,7 +31,6 @@ namespace TP_inmobiliaria
                     //Mostrar modal de ingreso correcto
 
                     //Aca deberia buscar el id del TipoUsuario vendedor en la tabla tipoUsuario
-
                     if((int)usuario.TipoUsuario == 2)
                     {
                         Response.Redirect("Interesados.aspx", false);
