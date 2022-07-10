@@ -74,7 +74,7 @@
                           <%}%>
 
                             <li class="nav-item">
-                                <asp:Button ID="btn_logout" CssClass="nav-link" runat="server" Text="Logout" OnClick="btn_logout_Click" />
+                                <asp:Button ID="btn_logout" CssClass="nav-link" style="background-color: transparent; border:none" runat="server" Text="Logout" OnClick="btn_logout_Click" />
                             </li>
                       <%}%>
                 </ul>
