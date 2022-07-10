@@ -58,6 +58,7 @@ namespace TP_inmobiliaria
                         {
                             int idPropiedad = (int)Session["propiedadFavorita"];
                             string ruta = "DetallePropiedad.aspx?idPropiedad=" + idPropiedad;
+                            agregarFavorito();
                             Response.Redirect(ruta, false);
                         }
                     }
@@ -98,6 +99,29 @@ namespace TP_inmobiliaria
                 Response.Redirect("Error.aspx", false);
             }
         }
+
+        private void agregarFavorito()
+        {
+            Usuario user = (Usuario)Session["User"];
+            FavoritoNegocio favorito = new FavoritoNegocio();
+            List<Favorito> ListaFavoritos = favorito.listarFavoritosPorUsuario(user.ID);
+
+            int propiedadFavorita = (int)Session["propiedadFavorita"];
+
+            if (!ListaFavoritos.Exists(x => x.IdPropiedad == propiedadFavorita))
+            {
+                try
+                {
+                    favorito.agregar(user.ID, propiedadFavorita);
+                }
+                catch (Exception ex)
+                {
+                    Session.Add("error", "ocurrio un error, intente nuevamente mas tarde...");
+                    Response.Redirect("Error.aspx", false);
+                    throw ex;
+                }
+            }
+        }
+
     }
-    
 }

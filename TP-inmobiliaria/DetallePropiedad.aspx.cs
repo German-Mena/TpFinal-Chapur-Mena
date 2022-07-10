@@ -60,6 +60,7 @@ namespace TP_inmobiliaria
                 Usuario user = (Usuario)Session["User"];
                 FavoritoNegocio favorito = new FavoritoNegocio();
                 ListaFavoritos = favorito.listarFavoritosPorUsuario(user.ID);
+
                 if (btnFavorito.Text == "No me interesa")
                 {
                     favorito.quitar(user.ID, idPropiedad);
