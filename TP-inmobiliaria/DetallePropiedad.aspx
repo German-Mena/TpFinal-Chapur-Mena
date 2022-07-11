@@ -72,17 +72,17 @@ function openModal() {
 <div class="colorder-1 col-md-4">
     <div class="row">
         <div class="col-lg-8" style="margin: 10px">
-            <h2 class="fw-normal"><%=Propiedad.ubicacion.ciudad%>, <%=Propiedad.ubicacion.provincia%>, <%=Propiedad.ubicacion.pais%> </h2>
-            <p><i class="fas fa-map-marker-alt"></i><%=Propiedad.ubicacion.calle%>,altura: <%=Propiedad.ubicacion.altura%></p>
-            <p><i class="fas fa-money-check-alt"></i><%=((float)Propiedad.valor)%></p>
+            <h2 class="fw-normal"> <%=Propiedad.ubicacion.ciudad%>, <%=Propiedad.ubicacion.provincia%>, <%=Propiedad.ubicacion.pais%> </h2>
+            <p><i class="fas fa-map-marker-alt"></i> <%=Propiedad.ubicacion.calle%>,altura: <%=Propiedad.ubicacion.altura%></p>
+            <p><i class="fas fa-money-check-alt"></i> <%=((float)Propiedad.valor)%></p>
         </div>
         <!-- /.col-lg-4 -->
         <div class="col-lg-8" style="margin: 10px">
-            <p><i class="fas fa-tag"></i>Tipo de transacción: <%=Propiedad.tipoContrato.descripcion%> </p>
-            <p><i class="fas fa-bath"></i>Baños: <%=Propiedad.cantidadBaños%></p>
-            <p><i class="fas fa-bed"></i>Ambientes: <%=Propiedad.cantidadAmbientes%></p>
-            <p><i class="fas fa-car-alt"></i>Cocheras: <%=Propiedad.cantidadCocheras%></p>
-            <p><i class="fas fa-calendar-alt"></i>Año de la propiedad: <%=Propiedad.fechaConstruccion.Year%></p>
+            <p><i class="fas fa-tag"></i> Tipo de transacción: <%=Propiedad.tipoContrato.descripcion%> </p>
+            <p><i class="fas fa-bath"></i> Baños: <%=Propiedad.cantidadBaños%></p>
+            <p><i class="fas fa-bed"></i> Ambientes: <%=Propiedad.cantidadAmbientes%></p>
+            <p><i class="fas fa-car-alt"></i> Cocheras: <%=Propiedad.cantidadCocheras%></p>
+            <p><i class="fas fa-calendar-alt"></i> Año de la propiedad: <%=Propiedad.fechaConstruccion.Year%></p>
         </div>
         <!-- /.col-lg-4 -->
         <div class="col-lg-8" style="margin: 10px">

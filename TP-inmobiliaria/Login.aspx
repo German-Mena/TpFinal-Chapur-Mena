@@ -48,13 +48,13 @@
                     <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label">Usuario</label>
-                            <asp:TextBox ID="TextBox1" placeholder="Usuario" CssClass="form-control" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtUserNuevo" placeholder="Usuario" CssClass="form-control" runat="server"></asp:TextBox>
                             <div id="emailHelp" class="form-text">Elegi el nombre de tu usuario</div>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Contraseña</label>
-                            <asp:TextBox ID="TextBox2" placeholder="Contraseña" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtPassNuevo" placeholder="Contraseña" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
 
                         <div class="mb-3">

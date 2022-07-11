@@ -50,17 +50,7 @@ namespace TP_inmobiliaria
                     }
                     else
                     {
-                        if (Session["propiedadFavorita"] == null)
-                        {
-                            Response.Redirect("HomePage.aspx", false);
-                        }
-                        else
-                        {
-                            int idPropiedad = (int)Session["propiedadFavorita"];
-                            string ruta = "DetallePropiedad.aspx?idPropiedad=" + idPropiedad;
-                            agregarFavorito();
-                            Response.Redirect(ruta, false);
-                        }
+                        redireccionar();
                     }
 
                 }
@@ -88,15 +78,31 @@ namespace TP_inmobiliaria
                 long telefono;
                 long.TryParse(txtTelefono.Text, out telefono);
 
-                usuario = new Usuario(txtUser.Text, txtPass.Text, 1, txtMail.Text, txtNombre.Text, txtApellido.Text, telefono);
+                usuario = new Usuario(txtUserNuevo.Text, txtPassNuevo.Text, 1, txtMail.Text, txtNombre.Text, txtApellido.Text, telefono);
                 negocio.Agregar(usuario);
-                Session.Add("usuario", usuario);
+                Session.Add("User", usuario);
+                redireccionar();
             }
             catch (Exception ex)
             {
                 Session.Add("error", "Ocurrio un error, por favor intente de nuevo mas tarde");
                 //Session.Add("error", ex.ToString());
                 Response.Redirect("Error.aspx", false);
+            }
+        }
+
+        private void redireccionar()
+        {
+            if (Session["propiedadFavorita"] == null)
+            {
+                Response.Redirect("HomePage.aspx", false);
+            }
+            else
+            {
+                int idPropiedad = (int)Session["propiedadFavorita"];
+                string ruta = "DetallePropiedad.aspx?idPropiedad=" + idPropiedad;
+                agregarFavorito();
+                Response.Redirect(ruta, false);
             }
         }
 

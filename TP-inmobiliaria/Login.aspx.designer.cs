@@ -60,22 +60,22 @@ namespace TP_inmobiliaria
         protected global::System.Web.UI.WebControls.Button btnIngresar;
 
         /// <summary>
-        /// TextBox1 control.
+        /// txtUserNuevo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtUserNuevo;
 
         /// <summary>
-        /// TextBox2 control.
+        /// txtPassNuevo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox txtPassNuevo;
 
         /// <summary>
         /// txtMail control.
