@@ -20,7 +20,6 @@ namespace TP_inmobiliaria
             cargar();
             
         }
-
         private void cargar()
         {
             propiedadNegocio propiedad = new propiedadNegocio();
@@ -38,16 +37,28 @@ namespace TP_inmobiliaria
             foreach (Favorito item in ListaFavoritos)
             {
                 prop = ListaPropiedades.Find(x => x.ID == item.IdPropiedad);
-
+                
                 if(prop.idVendedor == vendedor.ID)
                 {
-                    //Tengo que declarar el obj antes de cargarlo, si no siempre agrega el primero.
-                    Interesado interesado = new Interesado();
+                    
+                    if (item.Estado == true)
+                    {
+                        //Tengo que declarar el obj antes de cargarlo, si no siempre agrega el primero.
+                        Interesado interesado = new Interesado();
 
-                    interesado.Propiedad = prop;
-                    interesado.Usuario = comprador.buscarUsuario(item.IdUsuario);
+                        interesado.Propiedad = prop;
+                        interesado.Usuario = comprador.buscarUsuario(item.IdUsuario);
+                        if (item.Mensaje != "")
+                        {
+                            interesado.Mensaje = "Mensaje del interesado: " + item.Mensaje;
+                        }
+                        else interesado.Mensaje = "";
+                        //esta tiene que ser la accion del boton todavia falta modificar eso
+                        //seteamos el estado a 0 en donde ya leímos la propiedad y no necesitamos viendola más
+                        favorito.setearEstado(item.IdUsuario, item.IdPropiedad);
+                        if (interesado.Usuario.ID != -1) ListaInteresados.Add(interesado);
+                    }
 
-                    if(interesado.Usuario.ID != -1) ListaInteresados.Add(interesado);
                 }
             }
 

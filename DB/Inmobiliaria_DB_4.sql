@@ -82,6 +82,8 @@ create table favorito(
     id int identity(1,1) not null,
     IdUsuario int not null,
     IdPropiedad int not null,
+	Mensaje varchar(50) null,
+	Estado bit not null,
     primary key(id),
     foreign key(IdUsuario) references usuario(id),
     foreign key(IdPropiedad) references propiedad(id)

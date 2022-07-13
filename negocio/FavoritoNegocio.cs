@@ -61,6 +61,8 @@ namespace negocio
                     aux.ID = (int)datos.Lector["id"];
                     aux.IdUsuario = (int)datos.Lector["IdUsuario"];
                     aux.IdPropiedad = (int)datos.Lector["IdPropiedad"];
+                    aux.Mensaje = (string)datos.Lector["Mensaje"];
+                    aux.Estado = (bool)datos.Lector["Estado"];
 
                     lista.Add(aux);
                 }
@@ -77,8 +79,26 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
-
-        public void agregar(int idUsuario, int idPropiedad)
+        public void setearEstado(int idUsuario, int idPropiedad)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta(Diccionario.UPDATE_FAVORITOS);
+                datos.setearParametro("@idUsuario", idUsuario);
+                datos.setearParametro("@idPropiedad", idPropiedad);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public void agregar(int idUsuario, int idPropiedad, string text)
         {
             AccesoDatos datos = new AccesoDatos();
 
@@ -87,6 +107,8 @@ namespace negocio
                 datos.setearConsulta(Diccionario.AGREGAR_FAVORITO);
                 datos.setearParametro("@idUsuario", idUsuario);
                 datos.setearParametro("@idPropiedad", idPropiedad);
+                datos.setearParametro("@mensaje", text);
+                datos.setearParametro("@estado", 1);
 
                 datos.ejecutarAccion();
             }

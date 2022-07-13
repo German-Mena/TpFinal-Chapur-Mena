@@ -57,6 +57,7 @@ namespace TP_inmobiliaria
             }
             else
             {
+                TxtMsj.Text="";
                 Usuario user = (Usuario)Session["User"];
                 FavoritoNegocio favorito = new FavoritoNegocio();
                 ListaFavoritos = favorito.listarFavoritosPorUsuario(user.ID);
@@ -73,7 +74,8 @@ namespace TP_inmobiliaria
                     {
                         try
                         {
-                            favorito.agregar(user.ID, idPropiedad);
+                            
+                            favorito.agregar(user.ID, idPropiedad, TxtMsj.Text);
                         }
                         catch (Exception ex)
                         {

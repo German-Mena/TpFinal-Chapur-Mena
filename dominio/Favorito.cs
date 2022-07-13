@@ -11,5 +11,8 @@ namespace dominio
         public int ID { get; set; }
         public int IdUsuario { get; set; }
         public int IdPropiedad { get; set; }
+        public string Mensaje { get;set;}
+        public bool Estado { get; set; }
+
     }
 }

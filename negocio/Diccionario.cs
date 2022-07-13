@@ -24,15 +24,15 @@ namespace negocio
 
         public static string AGREGAR_USUARIO = "insert into usuario values (@user, @pass, @tipoUsuario, @mail, @nombre, @apellido, @telefono)";
 
-        public static string LISTAR_FAVORITOS_POR_USUARIO = "select ID, IdUsuario, IdPropiedad from favorito where IdUsuario = @IdUsuario";
+        public static string LISTAR_FAVORITOS_POR_USUARIO = "select ID, IdUsuario, IdPropiedad, Mensaje, Estado from favorito where IdUsuario = @IdUsuario";
 
-        public static string AGREGAR_FAVORITO = "insert into favorito values (@idUsuario, @idPropiedad)";
+        public static string AGREGAR_FAVORITO = "insert into favorito values (@idUsuario, @idPropiedad,@mensaje,@estado)";
 
         public static string QUITAR_FAVORITO = "delete from favorito where IdUsuario=@idUsuario AND IdPropiedad=@idPropiedad";
 
-        public static string LISTAR_FAVORITOS = "select ID, IdUsuario, IdPropiedad from favorito";
+        public static string LISTAR_FAVORITOS = "select ID, IdUsuario, IdPropiedad, Mensaje, Estado from favorito";
 
-
+        public static string UPDATE_FAVORITOS = "update favorito set Estado = 0 where IdUsuario=@idUsuario and IdPropiedad=@idPropiedad";
 
     }
 }

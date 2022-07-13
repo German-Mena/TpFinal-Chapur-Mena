@@ -14,11 +14,10 @@
                     <h5 class="card-title"><%= item.Usuario.Nombre%> <%= item.Usuario.Apellido%>, <%= item.Usuario.Mail%>, <%=item.Usuario.Telefono%> </h5>
                     <p class="card-text"><%= item.Propiedad.descripcion %></p>
                     <p class="card-text"><%= item.Propiedad.ubicacion.calle%> <%= item.Propiedad.ubicacion.altura %></p>
+                    <p class="card-text"><%= item.Mensaje %></p>
                     <asp:Button ID="btn_Eliminar" runat="server" CssClass="btn btn-primary" Text="Eliminar de interesados" />
                 </div>
-                <div class="card-footer text-muted">
-                    El cliente prefiere comunicarse entre las 18 y 20 HS
-                </div>
+
             </div>
             
             <%--<p><%=item.Propiedad.ID%> <%=item.Usuario.ID %></p>--%>

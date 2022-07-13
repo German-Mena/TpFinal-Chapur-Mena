@@ -101,11 +101,12 @@ namespace TP_inmobiliaria
             {
                 int idPropiedad = (int)Session["propiedadFavorita"];
                 string ruta = "DetallePropiedad.aspx?idPropiedad=" + idPropiedad;
-                agregarFavorito();
+                //agregarFavorito();
                 Response.Redirect(ruta, false);
             }
         }
 
+        //codigo al dope me parece
         private void agregarFavorito()
         {
             Usuario user = (Usuario)Session["User"];
@@ -118,7 +119,7 @@ namespace TP_inmobiliaria
             {
                 try
                 {
-                    favorito.agregar(user.ID, propiedadFavorita);
+                    favorito.agregar(user.ID, propiedadFavorita, "");
                 }
                 catch (Exception ex)
                 {
