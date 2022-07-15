@@ -77,7 +77,18 @@
 
                     <%if (ListaPropiedades_filtrada.Count == 0)
                         {%>
-                            <h4>Todavia no tenes propiedades favoritas!</h4>                  
+                            <div style="padding-top: 10px; padding-left: 10px">
+                                <div class="card col-md-4">
+                                    <div class="card-header">
+                                        Nada por acá! 
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Aún no tenés propiedades marcadas como favoritas.</h5>
+                                        <p class="card-text">Podes ver todas las que tenemos para vos haciendo click en el siguiente boton!</p>
+                                        <a href="Propiedades.aspx" class="btn btn-primary">Ver propiedades</a>
+                                    </div>
+                                </div>
+                            </div>                 
                         <%} %>
             
                     <% foreach (dominio.propiedad item in ListaPropiedades_filtrada)
