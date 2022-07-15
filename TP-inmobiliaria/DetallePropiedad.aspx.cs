@@ -58,7 +58,6 @@ namespace TP_inmobiliaria
             }
             else
             {
-                TxtMsj.Text="";
                 Usuario user = (Usuario)Session["User"];
                 FavoritoNegocio favorito = new FavoritoNegocio();
                 ListaFavoritos = favorito.listarFavoritosPorUsuario(user.ID);
@@ -85,16 +84,11 @@ namespace TP_inmobiliaria
                             throw ex;
                         }
                     }
-
+                    TxtMsj.Text = "";
                     Label1.Text = "Ya se encuentra en tus favoritos!";
                     Label1.ForeColor = System.Drawing.Color.Green;
                     btnFavorito.Text = "No me interesa";
                 }
-                
-                //Esto no esta funcionando
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
-
-
             }
         }
     }
