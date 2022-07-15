@@ -8,13 +8,18 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
-    <%--Se supone que esto tiene que hacer que el footer este fijo al final de la pagina, pero no esta funcionando--%>
+    <%--Con esto se fija el footer--%>
     <style>
-        html, body { height: 100%;}
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%
+        }
 
-        body > footer {
-            position: sticky;
-            top: 100vh;
+        body{
+            position: relative;
+            padding-bottom: 10em;
+            min-height: 100vh;
         }
     </style>
 
