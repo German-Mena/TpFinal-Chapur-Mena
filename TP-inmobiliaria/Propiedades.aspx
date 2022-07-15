@@ -74,12 +74,11 @@
 <!DOCTYPE html>
     <html xmlns="http://www.w3.org/1999/xhtml">
     <body>
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+<%--    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>--%>
 
     <hr />
         <asp:UpdatePanel runat="server">
             <ContentTemplate>
-                
                 <div class="row">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <div
