@@ -21,18 +21,19 @@
 
     <% foreach (dominio.Interesado item in ListaInteresados)
         { %>
-            <div class="card text-center">
-                <div class="card-header">
-                    <%= item.Propiedad.ubicacion.ciudad%>, <%= item.Propiedad.ubicacion.provincia%>, <%= item.Propiedad.ubicacion.pais%>
+            <div style="padding-top: 10px; padding-left: 10px">
+                <div class="card text-center col-md-4">
+                    <div class="card-header">
+                        <%= item.Propiedad.ubicacion.ciudad%>, <%= item.Propiedad.ubicacion.provincia%>, <%= item.Propiedad.ubicacion.pais%>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= item.Usuario.Nombre%> <%= item.Usuario.Apellido%>, <%= item.Usuario.Mail%>, <%=item.Usuario.Telefono%> </h5>
+                        <p class="card-text"><%= item.Propiedad.descripcion %></p>
+                        <p class="card-text"><%= item.Propiedad.ubicacion.calle%> <%= item.Propiedad.ubicacion.altura  %></p>
+                        <p class="card-text"><%= item.Mensaje %></p>
+                        <asp:Button ID="btn_Eliminar" runat="server" CssClass="btn btn-primary" Text="Eliminar de interesados" OnClick="btn_Eliminar_Click1" />
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title"><%= item.Usuario.Nombre%> <%= item.Usuario.Apellido%>, <%= item.Usuario.Mail%>, <%=item.Usuario.Telefono%> </h5>
-                    <p class="card-text"><%= item.Propiedad.descripcion %></p>
-                    <p class="card-text"><%= item.Propiedad.ubicacion.calle%> <%= item.Propiedad.ubicacion.altura  %></p>
-                    <p class="card-text"><%= item.Mensaje %></p>
-                    <asp:Button ID="btn_Eliminar" runat="server" CssClass="btn btn-primary"  Text="Eliminar de interesados" OnClick="btn_Eliminar_Click1" />
-                </div>
-
             </div>
             
             <%--<p><%=item.Propiedad.ID%> <%=item.Usuario.ID %></p>--%>
