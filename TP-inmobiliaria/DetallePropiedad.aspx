@@ -102,7 +102,7 @@ function openModal() {
 
 <%--Google maps --%>
 
-<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: auto">
+<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: auto; padding-top: 50px; padding-bottom: 40px;">
     <iframe height="400" src=<%="https://maps.google.com/maps?q=" + Propiedad.ubicacion.calle.Replace(" ","+") + "+" + Convert.ToString(Propiedad.ubicacion.altura) + "+" + Propiedad.ubicacion.ciudad + "+" + Propiedad.ubicacion.provincia.Replace(" ","+") + "&t=&z=13&ie=UTF8&iwloc=&output=embed"%> frameborder="0"
         style="border: 0; width: 100%"></iframe>
 </div>
