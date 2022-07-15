@@ -5,14 +5,16 @@
 
     <%if (ListaInteresados.Count() == 0)
         {%>
-            <div class="card">
-                <div class="card-header">
-                    Featured
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div style="padding-top: 10px; padding-left: 10px">
+                <div class="card col-md-4">
+                    <div class="card-header">
+                        Ops! 
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Aún no tenés clientes interesados en alguna de las propiedades que vendés.</h5>
+                        <p class="card-text">No te preocupes! Ya van a llegar tus nuevos clientes! Segui asi!</p>
+                        <%--<a href="#" class="btn btn-primary">Go somewhere</a>--%>
+                    </div>
                 </div>
             </div>
     <%} %>
