@@ -14,7 +14,13 @@ namespace negocio
                                                   ",P.cantidadAmbientes, P.cantidadBaños,P.cantidadCocheras, TP.descripcion TipoPropiedad, P.link, P.valor, P.idVendedor from propiedad P, tipoPropiedad TP, ubicacion U, " +
                                                   " tipoContrato TC where P.idTipoPropiedad = TP.id and  P.idUbicacion = U.id and P.idTipoContrato = TC.id";
 
+        public static string LISTAR_TIPOS_CONTRATOS = "select id, descripcion from TipoContrato";
+
+        public static string LISTAR_TIPOS_PROPIEDADES = "select id, descripcion from TipoPropiedad";
+
         public static string LISTAR_PROPIEDADES_CARDS = "select P.id, P.link, P.descripcion, P.valor, P.cantidadAmbientes, P.cantidadBaños, P.cantidadCocheras, P.idVendedor from propiedad P";
+
+        public static string LISTAR_PROPIEDADES_CARDS_FILTROS = "select P.id, P.link, P.descripcion, P.valor, P.cantidadAmbientes, P.cantidadBaños, P.cantidadCocheras, P.idVendedor from propiedad P where  P.idTipoPropiedad = @idTipoPropiedad and P.idTipoContrato = @idTipoContrato";
 
         public static string LISTAR_MULTIMEDIA = "select id, descripcion, idPropiedad, link from multimedia where idPropiedad = @idPropiedad";
 
@@ -33,6 +39,6 @@ namespace negocio
         public static string LISTAR_FAVORITOS = "select ID, IdUsuario, IdPropiedad, Mensaje, Estado from favorito";
 
         public static string UPDATE_FAVORITOS = "update favorito set Estado = 0 where IdUsuario=@idUsuario and IdPropiedad=@idPropiedad";
-
+        
     }
 }

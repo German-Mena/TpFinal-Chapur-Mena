@@ -54,11 +54,6 @@ namespace negocio
                     aux.link = (string)datos.Lector["link"];
                     aux.idVendedor = (int)datos.Lector["idVendedor"];
 
-                    ////multimedia
-                    //aux.multimedia = new multimedia();
-                    //aux.multimedia.ID = (int)datos.Lector["id"];
-                    //if (!(datos.Lector["link"] is DBNull))
-                    //    aux.multimedia.link = (string)datos.Lector["link"];
                     lista.Add(aux);                    
                 }
                 datos.cerrarConexion();
@@ -75,13 +70,22 @@ namespace negocio
             //}
         }
 
-        public List<propiedad> listarPropiedades_cards()
+        public List<propiedad> listarPropiedades_cards(string idTipoPropiedad = null, string idTipoContrato = null)
         {
             List<propiedad> lista = new List<propiedad>();
             AccesoDatos datos = new AccesoDatos();
             try
-            {
-                datos.setearConsulta(Diccionario.LISTAR_PROPIEDADES_CARDS);
+            {   
+                if (idTipoPropiedad == "" || idTipoPropiedad == null)
+                {
+                    datos.setearConsulta(Diccionario.LISTAR_PROPIEDADES_CARDS);
+                }
+                else
+                {
+                    datos.setearConsulta(Diccionario.LISTAR_PROPIEDADES_CARDS_FILTROS);
+                    datos.setearParametro("@idTipoPropiedad", idTipoPropiedad);
+                    datos.setearParametro("@idTipoContrato", idTipoContrato);
+                }
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -96,7 +100,6 @@ namespace negocio
                     aux.cantidadBaños = (int)datos.Lector["cantidadBaños"];
                     aux.cantidadCocheras = (int)datos.Lector["cantidadCocheras"];
                     aux.idVendedor = (int)datos.Lector["idVendedor"];
-
                     lista.Add(aux);
                 }
 

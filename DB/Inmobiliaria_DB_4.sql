@@ -95,6 +95,7 @@ insert into tipoPropiedad values ('Departamento'), ('Casa')
 
 insert into ubicacion values ('calle 1', '1234', '3D', 'Merlo', 'Buenos Aires', 'Argentina')
 insert into ubicacion values ('Agüero', '1789', '2', 'CABA', 'Buenos Aires', 'Argentina')
+insert into ubicacion values ('Zapiola', '2000', '2c', 'CABA', 'Buenos Aires', 'Argentina')
 
 insert into tipoUser values ('comprador'),('vendedor'),('admin')
 
@@ -102,7 +103,8 @@ insert into usuario values('flexkpo','1234',3,'mail1@hotmail.com','Felix','Gomez
 insert into usuario values('Javier','abcd',2,'javier@lainmobiliaria.com','Javier','Perez',1135684753)
 
 insert into propiedad values (2,2,1,2,'https://images.adsttc.com/media/images/622b/9c0b/6a2b/af01/6506/d38b/newsletter/004-ok.jpg?1647025197', '2022-06-14' , '1997-03-02',5,2,2, 'Casa muy moderna y grande', '550000')
-insert into propiedad values (1,2,2,2, 'https://www.bbva.com/wp-content/uploads/2021/04/casas-ecolo%CC%81gicas_apertura-hogar-sostenibilidad-certificado--1024x629.jpg', '2022-06-15' , '1997-03-15',5,2,2, 'En pleno centro de Buenos Aires', '600000')
+insert into propiedad values (2,2,2,2, 'https://www.bbva.com/wp-content/uploads/2021/04/casas-ecolo%CC%81gicas_apertura-hogar-sostenibilidad-certificado--1024x629.jpg', '2022-06-15' , '1997-03-15',5,2,2, 'En pleno centro de Buenos Aires', '600000')
+insert into propiedad values(1,1,3,2,'https://1.bp.blogspot.com/-ztUBrHLqNlc/VYBT5DVCoKI/AAAAAAAAELs/Dz_QVoun-AA/s1600/fachada-frontal1.jpg','2022-07-10','2021-12-16',3,1,0,'Departamento a estrenar en pleno Belgrano R','150000')
 
 insert into multimedia values ('living', 1, 'https://images.homify.com/image/upload/c_scale,h_375,w_500/v1439982551/p/photo/image/554935/_MG_7316_copy_copia.jpg')
 insert into multimedia values ('cocina', 1, 'https://static8.depositphotos.com/1363517/842/i/600/depositphotos_8422041-stock-photo-kitchen.jpg')
@@ -113,4 +115,5 @@ insert into multimedia values ('living', 2, 'https://i.pinimg.com/originals/fc/7
 insert into multimedia values ('cocina', 2, 'https://st.hzcdn.com/simgs/pictures/cocinas/cocina-en-rojo-loving-design-interiorismo-y-home-staging-img~83a1ab9a0e611c4f_14-7776-1-88917d1.jpg')
 insert into multimedia values ('comedor', 2, 'https://m.media-amazon.com/images/I/91P4NbpqlZL._AC_SX522_.jpg')
 insert into multimedia values ('baño', 2, 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bano-de-invitados-1556803418.jpg')
+
 

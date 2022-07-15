@@ -35,7 +35,7 @@ namespace TP_inmobiliaria
             UsuarioNegocio negocio = new UsuarioNegocio();
 
             try
-            {
+            {   
                 usuario = new Usuario(txtUser.Text, txtPass.Text);
 
                 if (negocio.Loguear(usuario))

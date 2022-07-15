@@ -70,26 +70,59 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+ 
 <!DOCTYPE html>
     <html xmlns="http://www.w3.org/1999/xhtml">
-        <body>
-            <%--   <asp:GridView ID="dgvTable" runat="server">
-            </asp:GridView>--%>            
-                <div class="containerProductos">
-            
-                    <% foreach (dominio.propiedad item in listaPropiedades)
-                        { %>
-                            <div class="card">
-                                <img src="<%= item.link %>" alt="Propiedad" />
-                                <h4><%= item.descripcion %></h4>
-                                <p><%= item.valor %></p>
-                                <%--<asp:Button ID="btn_verPropiedad" runat="server" Text="Ver Propiedad" OnClick="btn_verPropiedad_Click"/>--%>
-                                <a href="DetallePropiedad.aspx?idPropiedad=<%= item.ID %>">Ver detalle</a> 
-                            </div>
-                    <% } %>
+    <body>
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
+    <hr />
+        <asp:UpdatePanel runat="server">
+            <ContentTemplate>
+                
+                <div class="row">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div
+                          class="collapse navbar-collapse justify-content-center"
+                          id="navbarCenteredExample"
+                        >
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+                        <div class="col" style="margin:5px">
+                            <asp:dropdownlist runat="server" id="ddlTipoContrato" cssclass="btn btn-outline-dark dropdown-toggle" 
+                             onselectedindexchanged="ddlTipoContrato_SelectedIndexChanged">
+                            </asp:dropdownlist>
+                        </div>
+                        <div class="col" style="margin:5px">
+                            <asp:DropDownList runat="server" ID="ddlTipoPropiedad" CssClass="btn btn-outline-dark dropdown-toggle"
+                                  OnSelectedIndexChanged="ddlTipoPropiedad_SelectedIndexChanged">
+                            </asp:DropDownList>
+                        </div>
+                        <div class="col" style="margin:5px">
+                            <asp:Button runat="server" Text= "Cargar" ID="btnCargar" CssClass="btn btn-primary" autopostback="true"
+                             OnClick="btnCargar_Click"/>
+                        </div>
+                        </ul>
+                        </div>
+                    </nav>
+                    <div class="containerProductos">
+            
+                        <% foreach (dominio.propiedad item in listaPropiedades)
+                            { %>
+                                <div class="card">
+                                    <img src="<%= item.link %>" alt="Propiedad" />
+                                    <h4><%= item.descripcion %></h4>
+                                    <p><%= item.valor %></p>
+                                    <%--<asp:Button ID="btn_verPropiedad" runat="server" Text="Ver Propiedad" OnClick="btn_verPropiedad_Click"/>--%>
+                                    <a href="DetallePropiedad.aspx?idPropiedad=<%= item.ID %>">Ver detalle</a> 
+                                </div>
+                        <% } %>
+
+                    </div>
                 </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <hr />
+
         </body>
     </html>
 </asp:Content>

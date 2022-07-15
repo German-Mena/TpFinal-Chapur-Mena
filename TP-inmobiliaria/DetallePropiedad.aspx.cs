@@ -22,6 +22,7 @@ namespace TP_inmobiliaria
             btnFavorito.Text = "Me interesa";
             int.TryParse(Request.QueryString["idPropiedad"], out idPropiedad);
 
+
             propiedadNegocio propiedades = new propiedadNegocio();
             ListaPropiedades = propiedades.listar();
             Propiedad = ListaPropiedades.Find(x => x.ID == idPropiedad);

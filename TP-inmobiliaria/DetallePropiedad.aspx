@@ -96,12 +96,8 @@ function openModal() {
             <asp:Button ID = "btnFavorito" runat = "server" Text = "Me interesa" OnClick = "btnFavorito_Click" />
            
         </div>
-        <!-- /.col-lg-4 -->
-
     </div>
-    <!-- /.colorder-1 col-md-4-->
 </div>
-<!-- /.row -->
 </div>
 
 <%--Google maps --%>
@@ -110,5 +106,4 @@ function openModal() {
     <iframe height="400" src=<%="https://maps.google.com/maps?q=" + Propiedad.ubicacion.calle.Replace(" ","+") + "+" + Convert.ToString(Propiedad.ubicacion.altura) + "+" + Propiedad.ubicacion.ciudad + "+" + Propiedad.ubicacion.provincia.Replace(" ","+") + "&t=&z=13&ie=UTF8&iwloc=&output=embed"%> frameborder="0"
         style="border: 0; width: 100%"></iframe>
 </div>
-<%--Google maps ACA FALTA MODIFICAR ESTO DE QUE QUEDE ANCHO AUTOMATICO Y CAMBIARLE Q= POR LA DIRECCION--%>
 </asp:Content>

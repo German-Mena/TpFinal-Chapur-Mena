@@ -15,8 +15,12 @@ namespace TP_inmobiliaria
         public List<Favorito> ListaFavoritos { get; set; }
         public List<Interesado> ListaInteresados { get; set; }
 
+        public Interesado interes; 
+
+        int idUsuario { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {   
             cargar();
             
         }
@@ -33,7 +37,7 @@ namespace TP_inmobiliaria
 
             propiedad prop = new propiedad();
             UsuarioNegocio comprador = new UsuarioNegocio();
-
+            Interesado interes = new Interesado();
             foreach (Favorito item in ListaFavoritos)
             {
                 prop = ListaPropiedades.Find(x => x.ID == item.IdPropiedad);
@@ -53,15 +57,20 @@ namespace TP_inmobiliaria
                             interesado.Mensaje = "Mensaje del interesado: " + item.Mensaje;
                         }
                         else interesado.Mensaje = "";
-                        //esta tiene que ser la accion del boton todavia falta modificar eso
-                        //seteamos el estado a 0 en donde ya leímos la propiedad y no necesitamos viendola más
-                        favorito.setearEstado(item.IdUsuario, item.IdPropiedad);
                         if (interesado.Usuario.ID != -1) ListaInteresados.Add(interesado);
                     }
 
                 }
             }
 
+        }
+
+        protected void btn_Eliminar_Click1(object sender, EventArgs e)
+        {
+            int idUsuario = interes.Usuario.ID;
+            int idPropiedad = interes.Propiedad.ID;
+            FavoritoNegocio favorito = new FavoritoNegocio();
+            favorito.setearEstado(idUsuario,idPropiedad);
         }
     }
 }

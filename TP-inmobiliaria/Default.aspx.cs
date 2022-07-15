@@ -23,10 +23,6 @@ namespace TP_inmobiliaria
             propiedadNegocio propiedad = new propiedadNegocio();
             listaPropiedades = propiedad.listarPropiedades_cards();
             Session.Add("Propiedades", listaPropiedades);
-
-            //dgvTable.DataSource = listaPropiedades;
-            //dgvTable.DataBind();
-            //cargarImagen(listaPropiedades[0].link);
         }
 
     }
