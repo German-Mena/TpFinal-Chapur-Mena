@@ -7,6 +7,12 @@
 
     <script>
 
+        function validarMail(mail) {
+            var formato = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (mail.match(formato)) return true;
+            return false;
+        }
+
         function validarNuevoUsuario() {
 
                 var usuario = document.getElementById("<%= txtUserNuevo.ClientID %>").value;
@@ -47,6 +53,13 @@
                     document.getElementById("<%= txtMail.ClientID %>").classList.add("is-invalid");
                     valido = false;
                 }
+
+                else if (!validarMail(mail)) {
+                    document.getElementById("<%= txtMail.ClientID %>").classList.remove("is-valid");
+                    document.getElementById("<%= txtMail.ClientID %>").classList.add("is-invalid");
+                    valido = false;
+                }
+
                 else {
                     document.getElementById("<%= txtMail.ClientID %>").classList.remove("is-invalid");
                     document.getElementById("<%= txtMail.ClientID %>").classList.add("is-valid");
@@ -196,7 +209,7 @@
                             <label class="form-label">Mail</label>
                             <asp:TextBox ID="txtMail" placeholder="Mail" CssClass="form-control" runat="server">
                             </asp:TextBox>
-                            <div class="invalid-feedback">Por favor ingresa un mail para tu nuevo usuario.</div>
+                            <div class="invalid-feedback">Por favor ingresa un mail valido para tu nuevo usuario.</div>
                             <div class="valid-feedback">Muy bien!</div>
                         </div>
 
