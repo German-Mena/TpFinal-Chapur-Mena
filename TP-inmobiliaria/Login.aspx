@@ -8,9 +8,15 @@
     <script>
 
         function validarMail(mail) {
+            if (mail === "") return false;
             var formato = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             if (mail.match(formato)) return true;
             return false;
+        }
+
+        function validarTelefono(telefono) {
+            if (telefono === "") return false;
+            else return /^\d+$/.test(telefono);       
         }
 
         function validarNuevoUsuario() {
@@ -48,13 +54,7 @@
                     document.getElementById("<%= txtPassNuevo.ClientID %>").classList.add("is-valid");
                 }
 
-                if (mail === "") {
-                    document.getElementById("<%= txtMail.ClientID %>").classList.remove("is-valid");
-                    document.getElementById("<%= txtMail.ClientID %>").classList.add("is-invalid");
-                    valido = false;
-                }
-
-                else if (!validarMail(mail)) {
+                if (!validarMail(mail)) {
                     document.getElementById("<%= txtMail.ClientID %>").classList.remove("is-valid");
                     document.getElementById("<%= txtMail.ClientID %>").classList.add("is-invalid");
                     valido = false;
@@ -85,7 +85,7 @@
                     document.getElementById("<%= txtApellido.ClientID %>").classList.add("is-valid");
                 }
 
-                if (telefono === "") {
+                if (!validarTelefono(telefono)) {
                     document.getElementById("<%= txtTelefono.ClientID %>").classList.remove("is-valid");
                     document.getElementById("<%= txtTelefono.ClientID %>").classList.add("is-invalid");
                     valido = false;
