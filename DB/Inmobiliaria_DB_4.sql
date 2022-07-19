@@ -99,7 +99,7 @@ insert into ubicacion values ('Zapiola', '2000', '2c', 'CABA', 'Buenos Aires', '
 
 insert into tipoUser values ('comprador'),('vendedor'),('admin')
 
-insert into usuario values('flexkpo','1234',3,'mail1@hotmail.com','Felix','Gomez',1135684123)
+insert into usuario values('Carlos Gardel','1234',3,'mail1@hotmail.com','Carlos','Gardel',1135684123)
 insert into usuario values('Javier','abcd',2,'javier@lainmobiliaria.com','Javier','Perez',1135684753)
 
 insert into propiedad values (2,2,1,2,'https://images.adsttc.com/media/images/622b/9c0b/6a2b/af01/6506/d38b/newsletter/004-ok.jpg?1647025197', '2022-06-14' , '1997-03-02',5,2,2, 'Casa muy moderna y grande', '550000')
@@ -117,3 +117,6 @@ insert into multimedia values ('comedor', 2, 'https://m.media-amazon.com/images/
 insert into multimedia values ('baño', 2, 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bano-de-invitados-1556803418.jpg')
 
 
+insert into multimedia values ('living', 3, 'https://www.zonaprop.com.ar/noticias/wp-content/uploads/2016/08/depto.jpg')
+insert into multimedia values ('cocina', 3, 'https://www.hogares.cl/wp-content/uploads/2018/07/SLA_3707.jpg')
+insert into multimedia values ('cocina', 3, 'https://i.pinimg.com/originals/4e/f2/ec/4ef2ec49ddb26de9b18d5abb93601c53.jpg')
