@@ -30,7 +30,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Contraseña</label>
-                            <asp:TextBox ID="txtPass" placeholder="Contraseña" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtPass" placeholder="Contraseña" TextMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                         <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" CssClass="btn btn-primary" onclick="btnIngresar_Click1" />
                     </div>
