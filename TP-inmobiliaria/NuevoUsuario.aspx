@@ -3,11 +3,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+
     <div class="col-md-4">
 
         <div class="mb-3">
             <label class="form-label">Usuario</label>
-            <asp:TextBox ID="txtUser" placeholder="Usuario" CssClass="form-control" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtUser" placeholder="Usuario" CssClass="form-control" runat="server" ClientIDMode="Static"></asp:TextBox>
             <div id="emailHelp" class="form-text">Elegi el nombre de tu usuario</div>
         </div>
 

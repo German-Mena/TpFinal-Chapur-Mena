@@ -10,7 +10,7 @@ namespace dominio
     {
         public Usuario Usuario { get; set; }
         public propiedad Propiedad { get; set; }
-
         public string Mensaje { get; set; }
+        public bool estado { get; set; }
     }
 }

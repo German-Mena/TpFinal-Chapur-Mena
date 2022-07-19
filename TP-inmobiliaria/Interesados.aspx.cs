@@ -40,29 +40,33 @@ namespace TP_inmobiliaria
             Interesado interes = new Interesado();
             foreach (Favorito item in ListaFavoritos)
             {
-                prop = ListaPropiedades.Find(x => x.ID == item.IdPropiedad);
-                
-                if(prop.idVendedor == vendedor.ID)
-                {
-                    
-                    if (item.Estado == true)
-                    {
-                        //Tengo que declarar el obj antes de cargarlo, si no siempre agrega el primero.
-                        Interesado interesado = new Interesado();
 
-                        interesado.Propiedad = prop;
-                        interesado.Usuario = comprador.buscarUsuario(item.IdUsuario);
-                        if (item.Mensaje != "")
+                if (item.Estado)
+                {
+                    prop = ListaPropiedades.Find(x => x.ID == item.IdPropiedad);
+                
+                    if(prop.idVendedor == vendedor.ID)
+                    {
+                    
+                        if (item.Estado == true)
                         {
-                            interesado.Mensaje = "Mensaje del interesado: " + item.Mensaje;
+                            //Tengo que declarar el obj antes de cargarlo, si no siempre agrega el primero.
+                            Interesado interesado = new Interesado();
+
+                            interesado.Propiedad = prop;
+                            interesado.Usuario = comprador.buscarUsuario(item.IdUsuario);
+                            if (item.Mensaje != "")
+                            {
+                                interesado.Mensaje = "Mensaje del interesado: " + item.Mensaje;
+                            }
+                            else interesado.Mensaje = "";
+                            if (interesado.Usuario.ID != -1) ListaInteresados.Add(interesado);
                         }
-                        else interesado.Mensaje = "";
-                        if (interesado.Usuario.ID != -1) ListaInteresados.Add(interesado);
+
                     }
 
                 }
             }
-
         }
 
         protected void btn_Eliminar_Click1(object sender, EventArgs e)

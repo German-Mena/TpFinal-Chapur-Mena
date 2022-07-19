@@ -21,6 +21,7 @@
 
     <% foreach (dominio.Interesado item in ListaInteresados)
         { %>
+
             <div style="padding-top: 10px; padding-left: 10px">
                 <div class="card text-center col-md-4">
                     <div class="card-header">
@@ -37,7 +38,7 @@
             </div>
             
             <%--<p><%=item.Propiedad.ID%> <%=item.Usuario.ID %></p>--%>
-            
+  
       <% } %> 
 
 </asp:Content>
