@@ -15,5 +15,16 @@ namespace dominio
         public string ciudad { get; set; }
         public string provincia { get; set; }
         public string pais { get; set; }
+
+        public ubicacion(string _calle, int _altura, string _departamento, string _ciudad, string _provincia, string _pais)
+        {
+            calle = _calle;
+            altura = _altura;
+            departamento = _departamento;
+            ciudad = _ciudad;
+            provincia = _provincia;
+            pais = _pais;   
+        }
     }
+   
 }

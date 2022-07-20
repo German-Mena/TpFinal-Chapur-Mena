@@ -41,5 +41,14 @@ namespace negocio
         public static string UPDATE_FAVORITOS = "update favorito set Estado = 0 where IdUsuario=@idUsuario and IdPropiedad=@idPropiedad";
 
         public static string LISTAR_VENDEDORES = "select ID, Usuario, Pass, TipoUser, Mail, Nombre, Apellido, Telefono from usuario where TipoUser = 2";
+
+        public static string AGREGAR_PROPIEDAD = "insert into propiedad values(@idTipoPropiedad,@idTipoContrato,@idUbicacion,@idVendedor,@link," +
+                                                 "@fechaConstruccion,@cantidadAmbientes,@cantidadBaños,@cantidadCocheras,@descripcion,@valor)";
+        
+        public static string AGREGAR_UBICACION = "insert into ubicacion values(@calle,@altura,@departamento,@ciudad,@provincia,@pais)";
+
+        public static string AGREGAR_MULTIMEDIA = "insert into multimedia values(@descripcion,@idPropiedad,@link)";
+
+        public static string LISTAR_UBICACION = "select ID from ubicacion where calle=@calle and altura=@altura";
     }
 }

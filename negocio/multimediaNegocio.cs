@@ -45,5 +45,26 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+
+        public void Agregar(multimedia multi)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta(Diccionario.AGREGAR_MULTIMEDIA);
+                datos.setearParametro("@descripcion", multi.descripcion);
+                datos.setearParametro("@idPropiedad", multi.propiedad.ID);
+                datos.setearParametro("@link", multi.link);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }

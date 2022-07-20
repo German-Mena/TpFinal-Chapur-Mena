@@ -21,5 +21,23 @@ namespace dominio
         public string descripcion { get; set; }
         public decimal valor { get; set; }
         public int idVendedor { get; set; }
+
+        public propiedad(int _idPropiedad, int _idTipoContrato, int _idUbicacion, string _link,
+            DateTime _fechaPublicacion,DateTime _fechaConstruccion,int _cantidadAmbientes, int _cantidadBaños, int _cantidadCocheras, string _descripcion,
+            decimal _valor, int _idVendedor)
+        {
+            tipoPropiedad.id = _idPropiedad;
+            tipoContrato.id = _idTipoContrato;
+            ubicacion.ID = _idUbicacion;
+            link = _link;
+            fechaConstruccion = _fechaConstruccion;
+            fechaPublicacion = _fechaPublicacion;
+            cantidadAmbientes = _cantidadAmbientes;
+            cantidadBaños = _cantidadBaños;
+            cantidadCocheras = _cantidadCocheras;
+            descripcion = _descripcion;
+            valor = _valor;
+            idVendedor = _idVendedor;
+        }
     }
 }  

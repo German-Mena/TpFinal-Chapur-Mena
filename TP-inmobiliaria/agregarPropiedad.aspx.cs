@@ -45,7 +45,7 @@ namespace TP_inmobiliaria
             ddlVendedorAsignado.DataTextField = "Nombre";
             ddlVendedorAsignado.DataValueField = "ID";
             ddlVendedorAsignado.DataBind();
-            ddlVendedorAsignado.Items.Insert(0, new ListItem("Seleccionar Vendedor", "NA"));
+            //ddlVendedorAsignado.Items.Insert(0, new ListItem("Seleccionar Vendedor", "NA"));
         }
 
         protected void ddlTipoPropiedad_SelectedIndexChanged(object sender, EventArgs e)
@@ -77,6 +77,42 @@ namespace TP_inmobiliaria
                 ddlVendedorAsignado.DataBind();
             }
         }
+
+        protected void btnNuevaPropiedad_Click(object sender, EventArgs e)
+        {
+            //string idPropiedad = ddlTipoPropiedad.Text;
+            //string idContrato = ddlTipoContrato.Text;
+            //propiedadNegocio propiedad = new propiedadNegocio();
+            //listaPropiedades = propiedad.listarPropiedades_cards(idPropiedad, idContrato);
+            //Session.Add("listaPropiedades", listaPropiedades);
+
+            propiedadNegocio negocio = new propiedadNegocio();
+            multimediaNegocio multimediaNegocio = new multimediaNegocio();
+            ubicacionNegocio ubicacionNegocio = new ubicacionNegocio();
+            ubicacion ubic;
+            propiedad prop;
+            try
+            {
+                //multimedia = new multimedia();
+                //multimediaNegocio.Agregar(multimedia);
+
+                ubic = new ubicacion(txtCalle.Text,Convert.ToInt32(txtAltura.Text), txtDepartamento.Text, txtCiudad.Text,txtProvincia.Text,txtPais.Text);
+                ubicacionNegocio.Agregar(ubic);
+                int idUbicacion = ubicacionNegocio.BuscarID(txtCalle.Text, txtAltura.Text);
+
+                prop = new propiedad(int.Parse(ddlTipoPropiedad.SelectedItem.Value), int.Parse(ddlTipoContrato.SelectedItem.Value), idUbicacion, txtImagen.Text,DateTime.Today,DateTime.Parse(txtFechaConstruccion.Text)
+                    ,int.Parse(txtAmbientes.Text),int.Parse(txtBaños.Text),int.Parse(txtCocheras.Text),txtDescripcion.Text,int.Parse(txtValor.Text),int.Parse(ddlVendedorAsignado.Text));
+                negocio.Agregar(prop);
+                Session.Add("propiedad", prop);
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", "Ocurrio un error, por favor intente de nuevo mas tarde");
+                //Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx", false);
+            }
+        }
+    }
 
     }
 

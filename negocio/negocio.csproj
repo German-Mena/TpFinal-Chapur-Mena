@@ -49,6 +49,7 @@
     <Compile Include="propiedadNegocio.cs" />
     <Compile Include="tipoContratoNegocio.cs" />
     <Compile Include="TipoPropiedadNegocio.cs" />
+    <Compile Include="ubicacionNegocio.cs" />
     <Compile Include="UsuarioNegocio.cs" />
   </ItemGroup>
   <ItemGroup>

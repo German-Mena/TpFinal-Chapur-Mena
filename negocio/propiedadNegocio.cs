@@ -115,5 +115,35 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+        public void Agregar(propiedad prop)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta(Diccionario.AGREGAR_PROPIEDAD);
+                datos.setearParametro("@idTipoPropiedad", prop.tipoPropiedad.id);
+                datos.setearParametro("@idTipoContrato", prop.tipoContrato.id);
+                datos.setearParametro("@idUbicacion", prop.ubicacion.ID);
+                datos.setearParametro("@idVendedor", prop.idVendedor);
+                datos.setearParametro("@link", prop.link);
+                datos.setearParametro("@fechaConstruccion", prop.fechaConstruccion);
+                datos.setearParametro("@cantidadAmbientes", prop.cantidadAmbientes);
+                datos.setearParametro("@cantidadBaños", prop.cantidadBaños);
+                datos.setearParametro("@cantidadCocheras", prop.cantidadCocheras);
+                datos.setearParametro("@descripcion", prop.descripcion);
+                datos.setearParametro("@valor", prop.valor);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
     }
 }

@@ -159,12 +159,12 @@ namespace TP_inmobiliaria
         protected global::System.Web.UI.WebControls.DropDownList ddlVendedorAsignado;
 
         /// <summary>
-        /// btn_nuevoUser control.
+        /// btn_nuevaPropiedad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_nuevoUser;
+        protected global::System.Web.UI.WebControls.Button btn_nuevaPropiedad;
     }
 }

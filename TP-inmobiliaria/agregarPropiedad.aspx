@@ -123,12 +123,12 @@
 
         <div class="mb-3">
             <label style="padding-right: 20px" class="form-label">Vendedor Asignado</label>            
-            <asp:dropdownlist runat="server" id="ddlVendedorAsignado" cssclass="btn btn-outline-dark dropdown-toggle"
-                onselectedindexchanged="ddlVendedorAsignado_SelectedIndexChanged"> 
+            <asp:dropdownlist placeholder="Seleccionar Vendedor" runat="server" id="ddlVendedorAsignado" cssclass="btn btn-outline-dark dropdown-toggle"
+                 OnSelectedIndexChanged="ddlVendedorAsignado_SelectedIndexChanged"> 
             </asp:dropdownlist>
         </div>
 
-        <asp:Button Text="Ingresar" ID="btn_nuevoUser" CssClass="btn btn-primary" runat="server" />
+        <asp:Button Text="Cargar" ID="btn_nuevaPropiedad" CssClass="btn btn-primary" runat="server" OnClick="btnNuevaPropiedad_Click" />
 
     </div>
 
