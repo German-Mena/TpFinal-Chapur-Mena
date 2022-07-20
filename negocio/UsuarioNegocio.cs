@@ -122,5 +122,41 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+
+        public List<Usuario> listarVendedores()
+        {
+            List<Usuario> lista = new List<Usuario>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta(Diccionario.LISTAR_VENDEDORES);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Usuario aux = new Usuario();
+
+                    aux.ID = (int)datos.Lector["ID"];
+                    aux.User = (string)datos.Lector["Usuario"];
+                    aux.Pass = (string)datos.Lector["Pass"];
+                    aux.Mail = (string)datos.Lector["Mail"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Apellido = (string)datos.Lector["Apellido"];
+                    aux.Telefono = (long)datos.Lector["Telefono"];
+                    lista.Add(aux);
+                }
+
+                return lista;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }

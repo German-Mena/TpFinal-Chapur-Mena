@@ -64,17 +64,25 @@
                     <%if (Session["User"] != null)
                         {
                             dominio.Usuario user = (dominio.Usuario)Session["User"];
+
                             if((int)user.TipoUsuario == 1)
                             {%>
                                 <li class="nav-item">
                                     <a class="nav-link" href="Favoritos.aspx">Mis Propiedades</a>
                                 </li>
-                            <%}
+                          <%}
                             
                             if((int)user.TipoUsuario == 2)
                             {%>
                                 <li class="nav-item">
                                     <a class="nav-link" href="Interesados.aspx">Interesados</a>
+                                </li>
+                          <%}
+
+                            if((int)user.TipoUsuario == 3)
+                            {%>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="AgregarPropiedad.aspx">Agregar propiedad</a>
                                 </li>
                           <%}%>
 

@@ -39,6 +39,7 @@ namespace negocio
         public static string LISTAR_FAVORITOS = "select ID, IdUsuario, IdPropiedad, Mensaje, Estado from favorito";
 
         public static string UPDATE_FAVORITOS = "update favorito set Estado = 0 where IdUsuario=@idUsuario and IdPropiedad=@idPropiedad";
-        
+
+        public static string LISTAR_VENDEDORES = "select ID, Usuario, Pass, TipoUser, Mail, Nombre, Apellido, Telefono from usuario where TipoUser = 2";
     }
 }
