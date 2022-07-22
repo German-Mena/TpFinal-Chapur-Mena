@@ -111,7 +111,7 @@
                                 <div class="card">
                                     <img src="<%= item.link %>" alt="Propiedad" />
                                     <h4><%= item.descripcion %></h4>
-                                    <p><%= item.valor %></p>
+                                    <p><%= "USD " + item.valor %></p>
                                     <%--<asp:Button ID="btn_verPropiedad" runat="server" Text="Ver Propiedad" OnClick="btn_verPropiedad_Click"/>--%>
                                     <a href="DetallePropiedad.aspx?idPropiedad=<%= item.ID %>" class="btn btn-dark">Ver detalle</a> 
                                 </div>

@@ -54,7 +54,7 @@ function openModal() {
         <div class="col-lg-8" style="margin: 9px">
             <h2 class="fw-normal"> <%=Propiedad.ubicacion.ciudad%>, <%=Propiedad.ubicacion.provincia%>, <%=Propiedad.ubicacion.pais%> </h2>
             <p><i class="fas fa-map-marker-alt"></i> <%=Propiedad.ubicacion.calle%>,altura: <%=Propiedad.ubicacion.altura%></p>
-            <p><i class="bi bi-currency-dollar"></i> <%=((float)Propiedad.valor)%></p>
+            <p><i class="bi bi-currency-dollar"></i> <%=((float)Propiedad.valor) + " dólares"%></p>
         </div>
         <!-- /.col-lg-4 -->
         <div class="col-lg-8" style="margin: 9px">
