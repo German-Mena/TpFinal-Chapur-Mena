@@ -43,7 +43,7 @@ namespace negocio
         public static string LISTAR_VENDEDORES = "select ID, Usuario, Pass, TipoUser, Mail, Nombre, Apellido, Telefono from usuario where TipoUser = 2";
 
         public static string AGREGAR_PROPIEDAD = "insert into propiedad values(@idTipoPropiedad,@idTipoContrato,@idUbicacion,@idVendedor,@link," +
-                                                 "@fechaConstruccion,@cantidadAmbientes,@cantidadBaños,@cantidadCocheras,@descripcion,@valor)";
+                                                 "@fechaPublicacion,@fechaConstruccion,@cantidadAmbientes,@cantidadBaños,@cantidadCocheras,@descripcion,@valor)";
         
         public static string AGREGAR_UBICACION = "insert into ubicacion values(@calle,@altura,@departamento,@ciudad,@provincia,@pais)";
 

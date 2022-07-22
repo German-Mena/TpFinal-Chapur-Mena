@@ -25,6 +25,10 @@ namespace dominio
             provincia = _provincia;
             pais = _pais;   
         }
+        public ubicacion()
+        {
+
+        }
     }
    
 }

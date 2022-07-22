@@ -83,10 +83,9 @@ namespace TP_inmobiliaria
                 Session.Add("User", usuario);
                 redireccionar();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Session.Add("error", "Ocurrio un error, por favor intente de nuevo mas tarde");
-                //Session.Add("error", ex.ToString());
                 Response.Redirect("Error.aspx", false);
             }
         }

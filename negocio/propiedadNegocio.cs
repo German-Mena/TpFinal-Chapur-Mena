@@ -122,11 +122,12 @@ namespace negocio
             try
             {
                 datos.setearConsulta(Diccionario.AGREGAR_PROPIEDAD);
-                datos.setearParametro("@idTipoPropiedad", prop.tipoPropiedad.id);
-                datos.setearParametro("@idTipoContrato", prop.tipoContrato.id);
-                datos.setearParametro("@idUbicacion", prop.ubicacion.ID);
+                datos.setearParametro("@idTipoPropiedad", prop.idTipoPropiedad);
+                datos.setearParametro("@idTipoContrato", prop.idTipoContrato);
+                datos.setearParametro("@idUbicacion", prop.idUbicacion);
                 datos.setearParametro("@idVendedor", prop.idVendedor);
                 datos.setearParametro("@link", prop.link);
+                datos.setearParametro("@fechaPublicacion", prop.fechaPublicacion);
                 datos.setearParametro("@fechaConstruccion", prop.fechaConstruccion);
                 datos.setearParametro("@cantidadAmbientes", prop.cantidadAmbientes);
                 datos.setearParametro("@cantidadBaños", prop.cantidadBaños);

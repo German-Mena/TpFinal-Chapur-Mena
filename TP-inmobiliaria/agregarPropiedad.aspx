@@ -192,7 +192,6 @@
         }
 
     </script>
-
     <div class="col-md-4" style="padding-top: 20px; padding-left: 20px">
         <div class="mb-3">
             <label style="padding-right: 20px" class="form-label">Tipo de propiedad</label>
@@ -320,8 +319,7 @@
             <div class="valid-feedback">Muy bien!</div>
         </div>
 
-        <asp:Button Text="Ingresar" ID="btn_nuevoUser" CssClass="btn btn-primary" runat="server" OnClientClick="return validarPropiedad()" />
-
-    </div>
-
+        <asp:Button Text="Ingresar" ID="btn_nuevoUser" CssClass="btn btn-primary" runat="server" OnClick="btnNuevaPropiedad_Click" OnClientClick="return validarPropiedad()" />
+    </div>      
 </asp:Content>
+  
