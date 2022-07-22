@@ -99,7 +99,7 @@ namespace TP_inmobiliaria
                 negocio.Agregar(prop);
                 Session.Add("propiedad", prop);
                 cargarDropdowns();
-                
+                Response.Redirect("Propiedades.aspx", false);
             }
             catch (Exception ex)
             {
