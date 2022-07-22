@@ -20,6 +20,7 @@
             position: relative;
             padding-bottom: 10em;
             min-height: 100vh;
+            height: auto;
         }
     </style>
 

@@ -80,11 +80,6 @@ namespace TP_inmobiliaria
 
         protected void btnNuevaPropiedad_Click(object sender, EventArgs e)
         {
-            //string idPropiedad = ddlTipoPropiedad.Text;
-            //string idContrato = ddlTipoContrato.Text;
-            //propiedadNegocio propiedad = new propiedadNegocio();
-            //listaPropiedades = propiedad.listarPropiedades_cards(idPropiedad, idContrato);
-            //Session.Add("listaPropiedades", listaPropiedades);
 
             propiedadNegocio negocio = new propiedadNegocio();
             multimediaNegocio multimediaNegocio = new multimediaNegocio();
@@ -93,8 +88,6 @@ namespace TP_inmobiliaria
             propiedad prop;
             try
             {
-                //multimedia = new multimedia();
-                //multimediaNegocio.Agregar(multimedia);
 
                 ubic = new ubicacion(txtCalle.Text, Convert.ToInt32(txtAltura.Text), txtDepartamento.Text, txtCiudad.Text, txtProvincia.Text, txtPais.Text);
                 ubicacionNegocio.Agregar(ubic);
@@ -106,6 +99,7 @@ namespace TP_inmobiliaria
                 negocio.Agregar(prop);
                 Session.Add("propiedad", prop);
                 cargarDropdowns();
+                
             }
             catch (Exception ex)
             {

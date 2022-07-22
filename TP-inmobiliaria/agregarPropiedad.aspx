@@ -1,10 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="agregarPropiedad.aspx.cs" Inherits="TP_inmobiliaria.agregarPropiedad" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <script>
-
+        
         function validarMail(mail) {
             if (mail === "") return false;
             var formato = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -192,6 +193,7 @@
         }
 
     </script>
+            
     <div class="col-md-4" style="padding-top: 20px; padding-left: 20px">
         <div class="mb-3">
             <label style="padding-right: 20px" class="form-label">Tipo de propiedad</label>
@@ -319,7 +321,7 @@
             <div class="valid-feedback">Muy bien!</div>
         </div>
 
-        <asp:Button Text="Ingresar" ID="btn_nuevoUser" CssClass="btn btn-primary" runat="server" OnClick="btnNuevaPropiedad_Click" OnClientClick="return validarPropiedad()" />
+        <asp:Button Text="Ingresar" ID="btn_nuevoUser" CssClass="btn btn-primary" runat="server" data-toggle="modal"  OnClick="btnNuevaPropiedad_Click" OnClientClick="return validarPropiedad()" />
     </div>      
 </asp:Content>
   
